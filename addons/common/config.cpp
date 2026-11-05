@@ -3,12 +3,12 @@
 class CfgPatches {
     class ADDON {
         author = AUTHOR;
-        authors[] = {"TMP_MOD_AUTHOR"};
+        authors[] = {"kolmipilot"};
         url = ECSTRING(Main,Url);
         name = COMPONENT_NAME;
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
-            "TMP_MOD_PREFIX_main"
+            "kolmip_main"
         };
         units[] = {};
         weapons[] = {};

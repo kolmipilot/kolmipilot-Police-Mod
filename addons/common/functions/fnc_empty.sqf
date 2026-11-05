@@ -1,6 +1,6 @@
 #include "..\script_component.hpp"
 /*
- * Author: TMP_MOD_AUTHOR
+ * Author: kolmipilot
  * Example function that demonstrates the function + PREP pattern.
  *
  * Arguments:

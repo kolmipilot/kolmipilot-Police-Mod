@@ -1,21 +1,20 @@
-MIT License
+# Arma Public License - Share Alike (APL-SA)
 
-Copyright (c) 2026 WOJTEK885
+Copyright (c) 2026 kolmipilot
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+By downloading, installing, or using this work, you accept this license.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+## 1. Permission and Grants
+Subject to the terms and conditions of this License, the Author hereby grants you a worldwide, royalty-free, non-exclusive license to:
+- **Reproduce and Distribute:** You may copy and distribute verbatim copies of this work.
+- **Modify and Adapt:** You may modify, adapt, or create derivative works based on this work, provided that you comply with the conditions below.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+## 2. Conditions and Restrictions
+Your permissions under this License are strictly subject to the following conditions:
+- **Share Alike (SA):** If you modify, adapt, or build upon this work, you must distribute your contributions or derivative works under the exact same license (APL-SA).
+- **Attribution:** You must give appropriate credit to the original Author (WOJTEK885), provide a link to the license, and indicate if changes were made.
+- **Non-Commercial:** You may not use this work or any derivative works for commercial purposes or financial gain.
+- **Arma Only:** You may only use, modify, and distribute this work within products from the Arma series developed by Bohemia Interactive. You cannot port it to other games.
+
+## 3. Disclaimer of Warranty
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY.

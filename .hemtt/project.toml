@@ -1,6 +1,6 @@
-name = "TMP_MOD_NAME"
-author = "TMP_MOD_AUTHOR"
-prefix = "TMP_MOD_PREFIX"
+name = "kolmipilot's Police Mod"
+author = "kolmipilot"
+prefix = "kolmip"
 mainprefix = "z"
 
 [version]
@@ -11,15 +11,15 @@ git_hash = 0
 include = [
     "mod.cpp",
     "meta.cpp",
-    "logo_TMP_MOD_PREFIX_ca.paa",
-    "logo_TMP_MOD_PREFIX_over_ca.paa",
+    "logo_kolmip_ca.paa",
+    "logo_kolmip_over_ca.paa",
     "LICENSE.md",
     "README.md",
 ]
 exclude = []
 
 [hemtt.release]
-folder = "TMP_MOD_NAME"
+folder = "kolmipilot's Police Mod"
 
 [properties]
-author = "TMP_MOD_AUTHOR"
+author = "kolmipilot"

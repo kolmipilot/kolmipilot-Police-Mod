@@ -1,6 +1,6 @@
 # Contributing Setup & Guidelines
 
-Thanks for taking the time to contribute to TMP_MOD_NAME!
+Thanks for taking the time to contribute to kolmipilot's Police Mod!
 
 ## Setting up the Development Environment
 
@@ -14,8 +14,8 @@ Thanks for taking the time to contribute to TMP_MOD_NAME!
 ### 1. Clone the repository
 
 ```cmd
-git clone https://github.com/TMP_REPO_OWNER/TMP_REPO_NAME.git
-cd TMP_REPO_NAME
+git clone https://github.com/kolmipilot/kolmipilot-Police-Mod.git
+cd kolmipilot-Police-Mod
 ```
 
 ### 2. Install HEMTT

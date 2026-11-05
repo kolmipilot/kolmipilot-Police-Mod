@@ -3,7 +3,7 @@
 class CfgPatches {
     class ADDON {
         author = AUTHOR;
-        authors[] = {"TMP_MOD_AUTHOR"};
+        authors[] = {"kolmipilot"};
         url = CSTRING(Url);
         name = COMPONENT_NAME;
         requiredVersion = REQUIRED_VERSION;

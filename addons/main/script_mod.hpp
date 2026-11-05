@@ -1,7 +1,7 @@
 #define MAINPREFIX z
-#define PREFIX TMP_MOD_PREFIX
-#define MOD_NAME TMP_MOD_NAME
-#define AUTHOR "TMP_MOD_AUTHOR"
+#define PREFIX kolmip
+#define MOD_NAME kolmipilot's Police Mod
+#define AUTHOR "kolmipilot"
 
 #define REQUIRED_VERSION 2.20
 #define REQUIRED_CBA_VERSION {3,19,0}
