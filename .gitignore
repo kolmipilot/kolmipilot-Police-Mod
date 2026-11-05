@@ -1,0 +1,27 @@
+# HEMTT
+hemtt/
+hemtt.exe
+.hemtt/missions/~*
+.hemttout/
+releases/
+
+# Arma
+*.pbo
+*.sqfc
+
+# Tools
+__pycache__
+tools/output
+.idea
+.venv
+
+# Keys
+.hemttprivatekey
+*.biprivatekey
+
+# Compressed Files
+*.zip
+*.rar
+*.7z
+*.tar
+*.tar.gz

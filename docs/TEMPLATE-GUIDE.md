@@ -1,0 +1,78 @@
+# A3_Mod_Template by WOJTEK885
+
+Arma 3 mod project template using [HEMTT](https://hemtt.dev/) and [CBA_A3](https://github.com/CBATeam/CBA_A3). Includes basic configuration, automation scripts, additional utilities and other QoL features. Made with the [ACE3 Coding Guidelines](https://ace3.acemod.org/wiki/development/) in mind to make your modding life easier.
+
+For HEMTT installation and configuration please refer to [The HEMTT Book](https://hemtt.dev/index.html).
+
+> [!NOTE]
+> This guide just tells about the template, it's not intended to be a mod readme, nor be a part of the released mod.
+>
+> - Mod README template can be found in [`docs/README.md`](./docs/README.md).
+
+## Initial Project Setup
+
+1. Find and replace every occurrence of the following: (Ctrl+Shift+F in VSCode)
+
+    | Placeholder       | Replace with      | Comments                   | Example                     |
+    | ----------------- | ----------------- | -------------------------- | --------------------------- |
+    | `TMP_MOD_NAME`    | Mod's full name   |                            | Advanced Banana Environment |
+    | `TMP_MOD_ACRONYM` | Mod's acronym     | all uppercase              | ABE                         |
+    | `TMP_MOD_PREFIX`  | Mod's prefix      | acronym, but lowercase     | abe                         |
+    | `TMP_MOD_AUTHOR`  | Mod's author      | that's you or your team    | ABE Team                    |
+    | `TMP_REPO_OWNER`  | GitHub repo owner |                            | ABE-Organization            |
+    | `TMP_REPO_NAME`   | GitHub repo name  | no spaces, use _ or - or . | ABE3                        |
+    | `TMP_MOD_LICENSE` | Chosen license    |                            | APL-ND                      |
+    | `TMP_MOD_ID`      | Steam Workshop ID | after the initial upload   | 1234567890                  |
+
+    > You may also find `TMP_VERSION` - it's used by hook scripts and should not be replaced manually.
+
+2. Add a logo file named `logo_TMP_MOD_PREFIX_ca.paa` (referenced in `./mod.cpp`).
+3. Add a `LICENSE.md` for your project, replacing the template's license.
+
+### After the initial setup
+
+- Root [`README.md`](./README.md) file should be replaced with [`docs/README.md`](./docs/README.md).
+- Content of the guide you're reading now can be later found in [`docs/TEMPLATE-GUIDE.md`](docs/TEMPLATE-GUIDE.md) or deleted if not needed.
+
+> [!IMPORTANT]
+> Remember that `docs/README.md` is treated as the source-of-truth and overwrites the root `README.md` after every release.
+
+## Tools & Automation
+
+`tools/` contains Python helpers used by the project and CI:
+
+- `config_style_checker.py` - validates `.cpp/.hpp/.rvmat/.cfg` style (tabs, brackets, class formatting).
+- `stringtable_validator.py` - validates `stringtable.xml` structure and style.
+- `release.py` - orchestrates a release (version bump, validation, release).
+- `fs_naming.py` - keeps the release archive's `@` folder name Windows-safe (auto-fixes `[hemtt.release] folder`).
+- `logger.py` - shared logging and project-prefix helpers used by the other tools.
+
+### Versioning
+
+Current version is stored in `addons/main/script_version.hpp`. You can use `release.py` to bump it automatically (see `Releases` section).
+
+The version is stamped into the root `README.md` and `mod.cpp` on every build, and the README itself is copied from `docs/` on every release. This means the root `README.md` reflects the latest released version while `docs/README.md` remains the maintained copy.
+
+### Releases
+
+When working using this template, don't manuall y run `hemtt release`, instead use:
+
+```bash
+python tools/release.py
+```
+
+| Flag             | Description                                         |
+| ---------------- | --------------------------------------------------- |
+| `--major`        | Bumps the major version, resets minor and patch.    |
+| *(default)*      | Bumps the minor version, resets patch.              |
+| `--patch`        | Bumps just the patch number.                        |
+| `--skip-bump`    | Makes a release with no version bump.               |
+
+A post-release hook renames the output archive to `<name>_v<version>.zip` (e.g. `TMP_MOD_NAME_v0.0.0.zip`) to be used in GitHub release assets.
+
+## License
+
+- The template's original files are licensed under the **MIT** license - see the repo root [`LICENSE.md`](./LICENSE.md).
+- `tools/config_style_checker.py` and `tools/stringtable_validator.py` are derived from the ACE project and remain under the **GPLv2** license; they are not covered by the MIT license - see [`THIRD-PARTY-NOTICES.md`](./THIRD-PARTY-NOTICES.md).
+
+When building a mod from this template, replace the `TMP_MOD_LICENSE` placeholder and the license file with your own mod's license. MIT means you can do whatever you want and your addon content is licensed however you choose.
