@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="KOLMIP">
+    <Package name="Spikes">
+        <Key ID="STR_KOLMIP_Spikes_Action_Deploy">
+            <English>Deploy Spike Strip</English>
+            <Polish>Rozłóż kolczatkę</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Spikes_Action_Pickup">
+            <English>Retrieve Spike Strip</English>
+            <Polish>Zwiń kolczatkę</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Spikes_Key_Deploy">
+            <English>Deploy Spike Strip</English>
+            <Polish>Rozłóż kolczatkę</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Spikes_Key_Deploy_Tooltip">
+            <English>Deploys a spike strip from inventory in front of the officer</English>
+            <Polish>Rozkłada kolczatkę z ekwipunku przed funkcjonariuszem</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Spikes_Setting_EnableSpikes">
+            <English>Enable Spike Strips System</English>
+            <Polish>Włącz system kolczatek</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Spikes_Setting_EnableSpikes_Tooltip">
+            <English>Enables spike strip mechanics and tire puncturing</English>
+            <Polish>Włącza mechanikę kolczatek i przebijanie opon</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Spikes_Setting_PunctureAllWheels">
+            <English>Puncture All Wheels</English>
+            <Polish>Przebij wszystkie koła</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Spikes_Setting_PunctureAllWheels_Tooltip">
+            <English>If enabled, punctures all wheels of the vehicle instead of front/random wheels</English>
+            <Polish>Jeśli włączone, przebija wszystkie koła pojazdu zamiast przednich/losowych</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Spikes_Setting_ReusableAfterHit">
+            <English>Reusable Spike Strip</English>
+            <Polish>Wielorazowa kolczatka</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Spikes_Setting_ReusableAfterHit_Tooltip">
+            <English>If enabled, spike strips remain active after puncturing a vehicle's tires</English>
+            <Polish>Jeśli włączone, kolczatka pozostaje aktywna po przebiciu opon pojazdu</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Spikes_SpikeStripDeployed_DisplayName">
+            <English>Spike Strip (Deployed)</English>
+            <Polish>Kolczatka drogowa (Rozłożona)</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Spikes_SpikeStrip_Description">
+            <English>Deployable spike strip used by police to puncture vehicle tires.</English>
+            <Polish>Rozkładana kolczatka drogowa używana przez policję do przebijania opon.</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Spikes_SpikeStrip_DisplayName">
+            <English>Spike Strip</English>
+            <Polish>Kolczatka drogowa</Polish>
+        </Key>
+    </Package>
+</Project>

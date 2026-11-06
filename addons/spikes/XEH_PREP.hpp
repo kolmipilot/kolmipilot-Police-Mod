@@ -1,0 +1,15 @@
+PREP(canDeploy);
+PREP(deploy);
+PREP(canPickup);
+PREP(pickup);
+PREP(hasItem);
+PREP(punctureWheels);
+PREP(deploySpikeStripServer);
+PREP(deleteSpikeStripServer);
+PREP(registerSpikeStripServer);
+PREP(unregisterSpikeStripServer);
+PREP(initSpikeStripObject);
+PREP(onSpikeStripDeleted);
+PREP(onSpikeHitServer);
+PREP(monitorSpikesPFH);
+PREP(clientDriverPFH);

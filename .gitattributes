@@ -14,3 +14,4 @@ addons/**/*.hpp linguist-language=SQF
 
 # Do not count HEMTT includes in GitHub language statistics
 include/** linguist-vendored
+graphify-out/graph.json merge=graphify
