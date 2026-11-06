@@ -24,6 +24,4 @@ if (isNil QGVAR(activeSpikes)) then {
     GVAR(activeSpikes) = [];
 };
 
-if !(_spike in GVAR(activeSpikes)) then {
-    GVAR(activeSpikes) pushBack _spike;
-};
+GVAR(activeSpikes) pushBackUnique _spike;

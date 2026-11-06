@@ -32,18 +32,7 @@ GVAR(activeSpikes) = GVAR(activeSpikes) select {!isNull _x};
             if (alive _veh && {abs (speed _veh) > 0.5}) then {
                 private _vehPos = getPosATL _veh;
                 if (abs ((_vehPos select 2) - (_spikePos select 2)) < 1.8 && {_veh distance2D _spike < 3.2}) then {
-                    private _spikedVehicles = _spike getVariable [QGVAR(spikedVehicles), []];
-                    if !(_veh in _spikedVehicles) then {
-                        _spikedVehicles pushBack _veh;
-                        _spike setVariable [QGVAR(spikedVehicles), _spikedVehicles];
-
-                        // Target the vehicle's machine directly to puncture wheels locally
-                        [QGVAR(punctureWheels), [_veh], _veh] call CBA_fnc_targetEvent;
-
-                        if (!GVAR(reusableAfterHit)) then {
-                            _spike setDamage 1;
-                        };
-                    };
+                    [_veh, _spike] call FUNC(punctureWheels);
                 };
             };
         } forEach _nearbyVehicles;

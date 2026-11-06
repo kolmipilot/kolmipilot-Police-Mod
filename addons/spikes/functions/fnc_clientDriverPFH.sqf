@@ -34,7 +34,7 @@ private _spikes = nearestObjects [_vehPos, [QGVAR(spikeStripDeployed)], 5];
                 _spike setVariable [QGVAR(spikedVehicles), _spikedVehicles, true];
 
                 // Puncture locally immediately on the player vehicle
-                [_veh] call FUNC(punctureWheels);
+                [_veh, _spike] call FUNC(punctureWheels);
 
                 // Notify server of the hit
                 [QGVAR(spikeHitServer), [_spike, _veh]] call CBA_fnc_serverEvent;

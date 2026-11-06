@@ -21,6 +21,6 @@ params [
     ["_item", "", [""]]
 ];
 
-if (isNull _unit || {_item isEqualTo ""}) exitWith { false };
+if (isNull _unit || _item isEqualTo "") exitWith { false };
 
 (_item in (items _unit + assignedItems _unit))
