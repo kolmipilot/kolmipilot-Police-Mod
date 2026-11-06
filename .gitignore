@@ -25,3 +25,7 @@ tools/output
 *.7z
 *.tar
 *.tar.gz
+
+# Graphify and Obsidian AI Brain Output
+graphify-out/
+.graphify_cache/

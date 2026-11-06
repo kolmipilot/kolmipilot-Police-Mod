@@ -1,0 +1,23 @@
+{
+  "servers": {
+    "a3ref": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "a3ref-mcp"]
+    },
+    "graphify-obsidian": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "C:\\Users\\matik\\Desktop\\merlbtest\\kolmiPolice\\kolmipilot-Police-Mod\\graphify-out\\obsidian"
+      ]
+    },
+    "blender": {
+     "command": "uvx",
+     "args": ["mcp-for-blender", "run"]
+    }
+
+  }
+}
