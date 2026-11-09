@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="KOLMIP">
+    <Package name="Database">
+        <Key ID="STR_KOLMIP_Database_Component_Name">
+            <English>Police Database</English>
+            <Polish>Baza Danych Policji</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Database_Setting_Debug">
+            <English>Enable Database Debug Logging</English>
+            <Polish>Włącz logowanie debugowania bazy danych</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Database_Setting_Debug_Tooltip">
+            <English>Outputs database query and transaction events to the RPT log</English>
+            <Polish>Zapisuje zdarzenia zapytań i transakcji bazy danych do logu RPT</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Database_Setting_MaxSearchResults">
+            <English>Max Search Results</English>
+            <Polish>Maksymalna liczba wyników wyszukiwania</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Database_Setting_MaxSearchResults_Tooltip">
+            <English>Maximum number of records returned in a single database query over the network</English>
+            <Polish>Maksymalna liczba rekordów zwracanych w pojedynczym zapytaniu przez sieć</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Database_Setting_RequirePoliceAuth">
+            <English>Require Server Police Authorization</English>
+            <Polish>Wymagaj autoryzacji policyjnej serwera</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Database_Setting_RequirePoliceAuth_Tooltip">
+            <English>Restricts database queries and record updates exclusively to units authorized as police officers</English>
+            <Polish>Ogranicza zapytania do bazy danych i aktualizacje rekordów wyłącznie do jednostek autoryzowanych jako funkcjonariusze policji</Polish>
+        </Key>
+    </Package>
+</Project>

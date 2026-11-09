@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="KOLMIP">
+    <Package name="Tablet">
+        <Key ID="STR_KOLMIP_Tablet_Action_Open">
+            <English>Open Police Tablet</English>
+            <Polish>Otwórz tablet policyjny</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Btn_AddCrime">
+            <English>+ Add Charge</English>
+            <Polish>+ Dodaj wpis</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Btn_Cancel">
+            <English>Cancel</English>
+            <Polish>Anuluj</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Btn_Clear">
+            <English>CLEAR</English>
+            <Polish>CZYŚĆ</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Btn_EditWanted">
+            <English>Update Warrant</English>
+            <Polish>Zmień list gończy</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Btn_Refresh">
+            <English>Refresh</English>
+            <Polish>Odśwież</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Btn_SaveNotes">
+            <English>Save Notes</English>
+            <Polish>Zapisz notatki</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Btn_SaveWarrant">
+            <English>Confirm Warrant</English>
+            <Polish>Zatwierdź list</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Btn_Search">
+            <English>SEARCH</English>
+            <Polish>SZUKAJ</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Btn_SubmitCharge">
+            <English>Submit Charge</English>
+            <Polish>Zatwierdź zarzut</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Btn_ToggleLicense">
+            <English>Toggle</English>
+            <Polish>Przełącz</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Component_Name">
+            <English>Police Tablet</English>
+            <Polish>Tablet policyjny</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Eden_AttributeCategory">
+            <English>Police Mod</English>
+            <Polish>Police Mod</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Eden_IsPolice_Description">
+            <English>Authorize this unit as a police officer for the Police Mod database and tablet.</English>
+            <Polish>Autoryzuje tę jednostkę jako funkcjonariusza policji w bazie danych i tablecie Police Mod.</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Eden_IsPolice_DisplayName">
+            <English>Police officer</English>
+            <Polish>Funkcjonariusz policji</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Filter_ShowAll">
+            <English>Filter: Show All (Click: Show Wanted Only)</English>
+            <Polish>Filtr: Wszyscy (Kliknij: Tylko poszukiwani)</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Filter_ShowWanted">
+            <English>Filter: WANTED ONLY (Click: Show All)</English>
+            <Polish>Filtr: TYLKO POSZUKIWANI (Kliknij: Wszyscy)</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Header_CriminalRecord">
+            <English>Criminal History &amp; Offenses:</English>
+            <Polish>Kartoteka kryminalna &amp; Wykroczenia:</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Header_Notes">
+            <English>Officer Roleplay Notes &amp; Identity Details:</English>
+            <Polish>Notatki służbowe &amp; Szczegóły tożsamości:</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Header_Title">
+            <English>POLICE DEPT — MOBILE DATA TERMINAL</English>
+            <Polish>POLICJA — MOBILNY TERMINAL DANYCH</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Key_Open">
+            <English>Open Police Tablet</English>
+            <Polish>Otwórz tablet policyjny</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Key_Open_Tooltip">
+            <English>Opens the Police Mobile Data Terminal interface</English>
+            <Polish>Otwiera interfejs Mobilnego Terminala Policyjnego</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Modal_Crime_Charge">
+            <English>Charge Title / Violation:</English>
+            <Polish>Tytuł zarzutu / Wykroczenie:</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Modal_Crime_Notes">
+            <English>Incident Details &amp; Narrative:</English>
+            <Polish>Szczegóły zdarzenia &amp; Notatka:</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Modal_Crime_Severity">
+            <English>Offense Severity Level:</English>
+            <Polish>Poziom powagi wykroczenia:</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Modal_Crime_Title">
+            <English>FILE CRIMINAL CHARGE / INFRACTION</English>
+            <Polish>ZAREJESTRUJ ZARZUT / WYKROCZENIE</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Modal_Wanted_Reason">
+            <English>Warrant Reason / Details:</English>
+            <Polish>Powód wystawienia listu gończego:</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Modal_Wanted_Title">
+            <English>UPDATE ARREST WARRANT STATUS</English>
+            <Polish>AKTUALIZACJA LISTU GOŃCZEGO</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Msg_TabletMissing">
+            <English>Tablet Missing: You do not possess a Police Tablet.</English>
+            <Polish>Brak tabletu: Nie posiadasz tabletu policyjnego.</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Msg_UnauthorizedOfficer">
+            <English>Access Denied: Officer credentials not authorized by server.</English>
+            <Polish>Odmowa dostępu: Brak autoryzacji policyjnej serwera.</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_PoliceTablet_Description">
+            <English>Ruggedized police tablet providing mobile access to the central police database, person records, and criminal warrants.</English>
+            <Polish>Wzmocniony tablet policyjny zapewniający mobilny dostęp do centralnej bazy danych policji, kartotek osób i listów gończych.</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_PoliceTablet_DisplayName">
+            <English>Police Mobile Data Terminal</English>
+            <Polish>Mobilny Terminal Policyjny</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Setting_SoundEffects">
+            <English>Tablet UI Sound Effects</English>
+            <Polish>Efekty dźwiękowe interfejsu tabletu</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Setting_SoundEffects_Tooltip">
+            <English>Plays acoustic UI feedback when interacting with the police tablet</English>
+            <Polish>Odtwarza efekty dźwiękowe podczas korzystania z tabletu policyjnego</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Status_CrimeAdded">
+            <English>New charge successfully filed.</English>
+            <Polish>Nowy zarzut został pomyślnie zarejestrowany.</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Status_Empty">
+            <English>No matching records found in database.</English>
+            <Polish>Nie znaleziono pasujących rekordów w bazie danych.</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Status_Error">
+            <English>Database communication error or access denied.</English>
+            <Polish>Błąd komunikacji z bazą danych lub brak dostępu.</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Status_Ready">
+            <English>System Ready. Secure link established.</English>
+            <Polish>System gotowy. Bezpieczne połączenie aktywne.</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Status_Saved">
+            <English>Record updated successfully.</English>
+            <Polish>Rekord pomyślnie zaktualizowany.</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Status_Saving">
+            <English>Transmitting record updates to server...</English>
+            <Polish>Wysyłanie zmian rekordu do serwera...</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Status_Searching">
+            <English>Querying central police database...</English>
+            <Polish>Wyszukiwanie w centralnej bazie policji...</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Tab_Persons">
+            <English>PERSONS</English>
+            <Polish>OSOBY</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Tab_Vehicles">
+            <English>VEHICLES</English>
+            <Polish>POJAZDY</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Tab_Wanted">
+            <English>WANTED LIST</English>
+            <Polish>POSZUKIWANI</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Vehicles_PlaceholderNotice">
+            <English>&lt;t size='1.3' font='RobotoCondensedBold' color='#40a0ff'&gt;VEHICLE DATABASE MODULE&lt;/t&gt;&lt;br/&gt;&lt;br/&gt;&lt;t color='#a0b0c0'&gt;The vehicle registry and plate lookup system will be available in Phase 4.&lt;br/&gt;&lt;br/&gt;Officers will be able to search license plates, verify registered owners, and inspect vehicle warrant records directly from this console.&lt;/t&gt;</English>
+            <Polish>&lt;t size='1.3' font='RobotoCondensedBold' color='#40a0ff'&gt;MODUŁ BAZY DANYCH POJAZDÓW&lt;/t&gt;&lt;br/&gt;&lt;br/&gt;&lt;t color='#a0b0c0'&gt;Rejestr pojazdów i wyszukiwanie tablic rejestracyjnych będą dostępne w Fazie 4.&lt;br/&gt;&lt;br/&gt;Funkcjonariusze będą mogli sprawdzać numery rejestracyjne, właścicieli pojazdów oraz statusy poszukiwania bezpośrednio z tego terminala.&lt;/t&gt;</Polish>
+        </Key>
+    </Package>
+</Project>
