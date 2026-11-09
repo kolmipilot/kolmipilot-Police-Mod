@@ -34,13 +34,12 @@ _tabPersons ctrlSetBackgroundColor ([_inactiveColor, _activeColor] select (_tabI
 _tabWanted ctrlSetBackgroundColor ([_inactiveColor, _activeColor] select (_tabIndex == 1));
 _tabVehicles ctrlSetBackgroundColor ([_inactiveColor, _activeColor] select (_tabIndex == 2));
 
-private _leftGroupVisible = (_tabIndex != 2);
-(_display displayCtrl IDC_TABLET_SEARCH_INPUT) ctrlShow _leftGroupVisible;
-(_display displayCtrl IDC_TABLET_BTN_SEARCH) ctrlShow _leftGroupVisible;
-(_display displayCtrl IDC_TABLET_BTN_CLEAR) ctrlShow _leftGroupVisible;
-(_display displayCtrl IDC_TABLET_FILTER_WANTED) ctrlShow _leftGroupVisible;
-(_display displayCtrl IDC_TABLET_LIST_PERSONS) ctrlShow _leftGroupVisible;
-(_display displayCtrl IDC_TABLET_RESULTS_COUNT) ctrlShow _leftGroupVisible;
+(_display displayCtrl IDC_TABLET_SEARCH_INPUT) ctrlShow true;
+(_display displayCtrl IDC_TABLET_BTN_SEARCH) ctrlShow true;
+(_display displayCtrl IDC_TABLET_BTN_CLEAR) ctrlShow true;
+(_display displayCtrl IDC_TABLET_FILTER_WANTED) ctrlShow (_tabIndex != 2);
+(_display displayCtrl IDC_TABLET_LIST_PERSONS) ctrlShow true;
+(_display displayCtrl IDC_TABLET_RESULTS_COUNT) ctrlShow true;
 
 private _vehiclesGroup = _display displayCtrl IDC_TABLET_VEHICLES_GROUP;
 _vehiclesGroup ctrlShow (_tabIndex == 2);
@@ -48,7 +47,9 @@ _vehiclesGroup ctrlShow (_tabIndex == 2);
 if (_tabIndex == 2) then {
     (_display displayCtrl IDC_TABLET_RECORD_GROUP) ctrlShow false;
     (_display displayCtrl IDC_TABLET_RECORD_EMPTY_NOTICE) ctrlShow false;
-    ["Vehicle database module scheduled for deployment in Phase 4.", "info"] call FUNC(setStatus);
+    if (GVAR(currentVehicleId) isEqualTo "") then {
+        (_display displayCtrl IDC_TABLET_VEHICLE_EMPTY_NOTICE) ctrlShow true;
+    };
 } else {
     if (_tabIndex == 1) then {
         GVAR(filterWantedOnly) = true;

@@ -18,7 +18,9 @@ class CfgPatches {
             "ace_interact_menu"
         };
         units[] = {
-            QGVAR(policeTabletItem)
+            QGVAR(policeTabletItem),
+            QGVAR(moduleRegisterVehicle),
+            QGVAR(moduleConfigurePerson)
         };
         weapons[] = {
             QGVAR(policeTablet)

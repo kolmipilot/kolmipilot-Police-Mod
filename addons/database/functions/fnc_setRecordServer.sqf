@@ -23,6 +23,10 @@ params [
 
 if (!isServer || {_tableName isEqualTo ""} || {count _recordData == 0}) exitWith { [false, ""] };
 
+if (_tableName isEqualTo "vehicles") exitWith {
+    [_recordData] call FUNC(saveVehicleRecordServer)
+};
+
 private _table = [_tableName] call FUNC(getTableServer);
 if (isNil "_table") exitWith { [false, ""] };
 

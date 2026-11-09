@@ -212,7 +212,7 @@ class GVAR(dialog) {
             y = QUOTE(safezoneY + (safezoneH - 0.84 * safezoneH) / 2 + 0.174 * safezoneH);
             w = QUOTE(0.824 * safezoneW * 0.36 - 0.010 * safezoneW);
             h = QUOTE(0.824 * safezoneH - 0.332 * safezoneH);
-            onLBSelChanged = QUOTE(_this call FUNC(onPersonsListSelect));
+            onLBSelChanged = QUOTE(if (GVAR(currentTab) == 2) then {_this call FUNC(onVehicleListSelect)} else {_this call FUNC(onPersonsListSelect)});
         };
 
         class ResultsCount: GVAR(RscText) {
@@ -432,22 +432,88 @@ class GVAR(dialog) {
             };
         };
 
-        // --- Vehicles Tab Placeholder Group ---
+        // --- Vehicles Tab ---
         class VehiclesGroup: GVAR(RscControlsGroup) {
             idc = IDC_TABLET_VEHICLES_GROUP;
-            x = SCREEN_X;
+            x = RIGHT_X;
             y = QUOTE(safezoneY + (safezoneH - 0.84 * safezoneH) / 2 + 0.008 * safezoneH + 0.092 * safezoneH);
-            w = SCREEN_W;
+            w = RIGHT_W;
             h = QUOTE(0.824 * safezoneH - 0.13 * safezoneH);
 
             class Controls {
-                class VehiclesNotice: GVAR(RscStructuredText) {
-                    idc = -1;
-                    x = QUOTE(0.05 * safezoneW);
-                    y = QUOTE(0.15 * safezoneH);
-                    w = QUOTE(0.70 * safezoneW);
-                    h = QUOTE(0.30 * safezoneH);
-                    text = CSTRING(Vehicles_PlaceholderNotice);
+                class VehicleEmptyNotice: GVAR(RscStructuredText) {
+                    idc = IDC_TABLET_VEHICLE_EMPTY_NOTICE;
+                    x = QUOTE(0.02 * safezoneW);
+                    y = QUOTE(0.20 * safezoneH);
+                    w = QUOTE(0.57 * safezoneW);
+                    h = QUOTE(0.10 * safezoneH);
+                    text = CSTRING(Vehicle_SelectRecord);
+                };
+
+                class VehicleName: GVAR(RscText) {
+                    idc = IDC_TABLET_VEHICLE_NAME;
+                    x = QUOTE(0.02 * safezoneW);
+                    y = QUOTE(0.014 * safezoneH);
+                    w = QUOTE(0.56 * safezoneW);
+                    h = QUOTE(0.042 * safezoneH);
+                    text = "";
+                    font = "RobotoCondensedBold";
+                    SizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1.3)";
+                    colorText[] = {0.95, 0.95, 0.95, 1};
+                };
+
+                class VehiclePlate: GVAR(RscText) {
+                    idc = IDC_TABLET_VEHICLE_PLATE;
+                    x = QUOTE(0.02 * safezoneW);
+                    y = QUOTE(0.070 * safezoneH);
+                    w = QUOTE(0.56 * safezoneW);
+                    h = QUOTE(0.030 * safezoneH);
+                    text = "";
+                };
+
+                class VehicleOwner: GVAR(RscText) {
+                    idc = IDC_TABLET_VEHICLE_OWNER;
+                    x = QUOTE(0.02 * safezoneW);
+                    y = QUOTE(0.108 * safezoneH);
+                    w = QUOTE(0.56 * safezoneW);
+                    h = QUOTE(0.030 * safezoneH);
+                    text = "";
+                };
+
+                class VehicleClass: GVAR(RscText) {
+                    idc = IDC_TABLET_VEHICLE_CLASS;
+                    x = QUOTE(0.02 * safezoneW);
+                    y = QUOTE(0.146 * safezoneH);
+                    w = QUOTE(0.56 * safezoneW);
+                    h = QUOTE(0.030 * safezoneH);
+                    text = "";
+                };
+
+                class VehicleStatus: GVAR(RscText) {
+                    idc = IDC_TABLET_VEHICLE_STATUS;
+                    x = QUOTE(0.02 * safezoneW);
+                    y = QUOTE(0.184 * safezoneH);
+                    w = QUOTE(0.56 * safezoneW);
+                    h = QUOTE(0.030 * safezoneH);
+                    text = "";
+                };
+
+                class VehicleWantedReason: GVAR(RscStructuredText) {
+                    idc = IDC_TABLET_VEHICLE_WANTED_REASON;
+                    x = QUOTE(0.02 * safezoneW);
+                    y = QUOTE(0.228 * safezoneH);
+                    w = QUOTE(0.56 * safezoneW);
+                    h = QUOTE(0.070 * safezoneH);
+                    text = "";
+                };
+
+                class VehicleNotes: GVAR(RscStructuredText) {
+                    idc = IDC_TABLET_VEHICLE_NOTES;
+                    x = QUOTE(0.02 * safezoneW);
+                    y = QUOTE(0.310 * safezoneH);
+                    w = QUOTE(0.56 * safezoneW);
+                    h = QUOTE(0.20 * safezoneH);
+                    text = "";
                 };
             };
         };
@@ -612,9 +678,9 @@ class GVAR(dialog) {
         class ModalWantedGroup: GVAR(RscControlsGroup) {
             idc = IDC_TABLET_MODAL_WANTED_GROUP;
             x = QUOTE(safezoneX + (safezoneW - 0.34 * safezoneW) / 2);
-            y = QUOTE(safezoneY + (safezoneH - 0.30 * safezoneH) / 2);
+            y = QUOTE(safezoneY + (safezoneH - 0.38 * safezoneH) / 2);
             w = QUOTE(0.34 * safezoneW);
-            h = QUOTE(0.30 * safezoneH);
+            h = QUOTE(0.38 * safezoneH);
 
             class Controls {
                 class CardBg: GVAR(RscText) {
@@ -622,7 +688,7 @@ class GVAR(dialog) {
                     x = 0;
                     y = 0;
                     w = QUOTE(0.34 * safezoneW);
-                    h = QUOTE(0.30 * safezoneH);
+                    h = QUOTE(0.38 * safezoneH);
                     colorBackground[] = {0.09, 0.12, 0.16, 0.99};
                 };
 
@@ -641,7 +707,7 @@ class GVAR(dialog) {
                 class WantedToggleBtn: GVAR(RscButton) {
                     idc = IDC_TABLET_MODAL_WANTED_CHECK;
                     x = QUOTE(0.015 * safezoneW);
-                    y = QUOTE(0.056 * safezoneH);
+                    y = QUOTE(0.060 * safezoneH);
                     w = QUOTE(0.310 * safezoneW);
                     h = QUOTE(0.036 * safezoneH);
                     text = "";
@@ -652,7 +718,7 @@ class GVAR(dialog) {
                 class ReasonLabel: GVAR(RscText) {
                     idc = -1;
                     x = QUOTE(0.015 * safezoneW);
-                    y = QUOTE(0.104 * safezoneH);
+                    y = QUOTE(0.112 * safezoneH);
                     w = QUOTE(0.310 * safezoneW);
                     h = QUOTE(0.022 * safezoneH);
                     text = CSTRING(Modal_Wanted_Reason);
@@ -663,15 +729,15 @@ class GVAR(dialog) {
                 class ReasonInput: GVAR(RscEditMulti) {
                     idc = IDC_TABLET_MODAL_WANTED_REASON;
                     x = QUOTE(0.015 * safezoneW);
-                    y = QUOTE(0.130 * safezoneH);
+                    y = QUOTE(0.142 * safezoneH);
                     w = QUOTE(0.310 * safezoneW);
-                    h = QUOTE(0.100 * safezoneH);
+                    h = QUOTE(0.120 * safezoneH);
                 };
 
                 class BtnSubmitWanted: GVAR(RscButton) {
                     idc = IDC_TABLET_MODAL_WANTED_SUBMIT;
                     x = QUOTE(0.015 * safezoneW);
-                    y = QUOTE(0.245 * safezoneH);
+                    y = QUOTE(0.292 * safezoneH);
                     w = QUOTE(0.145 * safezoneW);
                     h = QUOTE(0.036 * safezoneH);
                     text = CSTRING(Btn_SaveWarrant);
@@ -684,7 +750,7 @@ class GVAR(dialog) {
                 class BtnCancelWanted: GVAR(RscButton) {
                     idc = IDC_TABLET_MODAL_WANTED_CANCEL;
                     x = QUOTE(0.180 * safezoneW);
-                    y = QUOTE(0.245 * safezoneH);
+                    y = QUOTE(0.292 * safezoneH);
                     w = QUOTE(0.145 * safezoneW);
                     h = QUOTE(0.036 * safezoneH);
                     text = CSTRING(Btn_Cancel);

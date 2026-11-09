@@ -19,8 +19,13 @@
 private _display = uiNamespace getVariable [QGVAR(display), displayNull];
 if (isNull _display) exitWith {};
 
+if (GVAR(currentTab) == 2) exitWith {
+    call FUNC(searchVehicles);
+};
+
 if (GVAR(isSearching)) exitWith {};
 GVAR(isSearching) = true;
+private _searchTab = GVAR(currentTab);
 
 private _ctrlInput = _display displayCtrl IDC_TABLET_SEARCH_INPUT;
 private _queryText = ctrlText _ctrlInput;
@@ -42,12 +47,15 @@ _btnSearch ctrlEnable false;
 
 [_criteria, {
     params ["_results", "_args", "_success"];
-    _args params ["_prevId"];
+    _args params ["_prevId", "_requestTab"];
 
     GVAR(isSearching) = false;
 
     private _display = uiNamespace getVariable [QGVAR(display), displayNull];
     if (isNull _display) exitWith {};
+    if (_requestTab != GVAR(currentTab)) exitWith {
+        call FUNC(searchPersons);
+    };
 
     private _btnSearch = _display displayCtrl IDC_TABLET_BTN_SEARCH;
     _btnSearch ctrlEnable true;
@@ -105,4 +113,4 @@ _btnSearch ctrlEnable false;
     if (_selectedIndex != -1) then {
         _ctrlList lbSetCurSel _selectedIndex;
     };
-}, [GVAR(currentRecordId)]] call EFUNC(database,searchPersons);
+}, [GVAR(currentRecordId), _searchTab]] call EFUNC(database,searchPersons);

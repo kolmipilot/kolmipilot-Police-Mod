@@ -90,26 +90,31 @@ Do not automatically register unconfigured units in this phase. Tablet edits app
 
 ## Phase 4 — Vehicle Database and Manual Registration
 
-The database addon already initializes a generic `vehicles` table, but the completed TODO work does not yet define a vehicle-specific record schema, registration flow, or vehicle search API. Build on the existing database backend rather than duplicating it.
+Implemented explicit, server-side vehicle registration on the existing database backend. Vehicle records are stored in memory for the mission; no automatic registration or generated plates are included.
 
-- [ ] Define vehicle records with a unique internal vehicle identifier, registration plate, owner link to a person record, vehicle type/class, registration and wanted status/reason, and relevant notes.
-- [ ] Implement server-authoritative vehicle create, search, read, update, and delete operations using the existing database API and networking patterns.
-- [ ] Add an Eden/Zeus module to explicitly register a placed vehicle and manually assign or edit its registration plate and owner; support linking to an existing registered person.
-- [ ] Validate plate format and uniqueness server-side, validate owner links, and keep a person's owned-vehicle list consistent with the vehicle record.
-- [ ] Ensure Eden/Zeus module changes are synchronized by the server and do not automatically register every vehicle in the mission.
-- [ ] Add vehicle search and record views to the tablet, including lookup by plate, owner, vehicle details, and wanted/registration status.
+- [x] Define vehicle records with a unique internal vehicle identifier, registration plate, owner link to a person record, vehicle type/class, registration and wanted status/reason, and relevant notes.
+- [x] Implement vehicle create, search, read, update, and delete through the existing database API and server handlers.
+- [x] Add an Eden/Zeus module to register synchronized vehicles and assign or edit their plate, optional existing-person owner, wanted status/reason, and notes.
+- [x] Allow a synchronized AI/person object to be registered and assigned as vehicle owner without manually entering a UID.
+- [x] Validate plate format and uniqueness server-side, validate owner links, and keep a person's owned-vehicle list consistent when vehicle ownership, plates, or records change.
+- [x] Ensure module registration runs server-side and does not automatically register every vehicle in the mission.
+- [x] Add vehicle search and record views to the tablet, including lookup by plate, owner, vehicle details, and wanted/registration status.
 - [ ] Verify manual registration, plate uniqueness/validation, owner links, tablet lookup, and multiplayer synchronization.
 
 This phase provides manual, mission-maker-assigned plates and vehicle records. Automatic plate generation and encounter-based vehicle registration belong to the dynamic interaction phase.
 
-## Phase 5 — Eden Editor and Zeus Person Configuration
+## Phase 5 — Minimal Eden/Zeus Person Configuration
 
-- [ ] Add Eden Editor and Zeus modules for mission makers to designate police officers and configure police authorization.
-- [ ] Add module options for configuring civilian identity/behavior (including innocent, suspected, and wanted states) and explicitly selecting units for database registration.
-- [ ] Apply module configuration consistently to AI and player units where supported; enforce police authorization server-side.
-- [ ] Register explicitly configured units without requiring a player interaction, and make their person records available to the tablet and vehicle-owner lookup.
-- [ ] Ensure unconfigured units are not registered automatically and module configuration does not create unnecessary database or network work.
-- [ ] Verify module placement/configuration in Eden and runtime behavior through Zeus in multiplayer.
+Implemented only the requested innocent/wanted registration choice. Civilian behavior, suspected status, and encounter-driven registration are intentionally deferred.
+
+- [x] Add Eden and Zeus options to leave a person unconfigured or explicitly register them as innocent or wanted.
+- [x] Apply configuration server-side to AI and player units and expose registered records to the tablet and vehicle-owner lookup.
+- [x] Keep the Wanted tab limited to records explicitly marked wanted; innocent records remain outside that list.
+- [x] Keep unconfigured units out of the database; no civilian behavior effects or automatic registration are implemented.
+- [x] Fix the wanted-status modal layout so the toggle, reason field, and action buttons do not overlap.
+- [x] Add an optional warrant-reason field to the Eden person attribute and Zeus person module.
+- [x] Verify module placement/configuration in Eden and runtime behavior through Zeus in multiplayer.
+- [ ] Fix overlaping windows, change warranty, add wyrok
 
 ## Phase 6 — Dynamic Police Interactions and Encounter-Based Records
 
@@ -117,11 +122,13 @@ This phase provides manual, mission-maker-assigned plates and vehicle records. A
 - [ ] Support initiating conversations or inspections and retrieving or presenting the relevant identity/badge information.
 - [ ] On first eligible encounter, register the unit only when the configured registration rules allow it; retrieve existing records for already registered units.
 - [ ] Add configurable civilian behavior types and randomized behavior/dialogue, including cooperative, uncooperative, fleeing, and hostile cases.
-- [ ] Add ACE interactions on vehicles and suitable ACE self-interactions to check nearby vehicles on foot and vehicles ahead of or behind the officer's vehicle when checking from inside a vehicle; show results as ACE structured text, not hints.
+- [ ] Add ACE interactions on vehicles and suitable ACE self-interactions to check plates on nearby vehicles on foot and vehicles ahead of or behind the officer's vehicle when checking from inside a vehicle; show results as ACE structured text, not hints.
 - [ ] Allow officers to check the assigned plate, registration, owner, and wanted status during vehicle interactions.
 - [ ] Support encounter-based vehicle registration when allowed by mission configuration, linking the vehicle to its owner or assigned identity.
 - [ ] Generate a unique plate when a vehicle is first registered dynamically, while preserving manually assigned plates and preventing collisions.
 - [ ] Keep networked interactions and database changes server-authoritative, multiplayer-safe, and limited to the data required by participants.
 - [ ] Verify registration rules, interaction outcomes, generated/manual plate handling, vehicle checks, and synchronization in a dedicated multiplayer environment.
+- [ ] If not listed above add option to stop vheicles or civilan on foot.
+- [ ] Add dialouge option to ask civilian for id, driving license, ask what he is doing here. If he is wanted there is chance he wont do anything, he will start running, or his side will change to opfor then he will take out gun and start shooting. for now make this system simple, in the future we will amke it randomoise etc. for now use ace inteaction system to interact and ace structured system or if arma have its own  to show civilian text. of course keep it in mind that if talking about civilian it can be also bluefor, opfor greenfor.
 
 TODO phases 3, 4, and 6 split the database/tablet, vehicle-registration, and interaction work described in Specification Phase 3. TODO phase 5 covers the Eden/Zeus configuration described in Specification Phase 4; the vehicle-specific registration module is planned in phase 4 so manual registration can precede dynamic encounters.

@@ -44,7 +44,8 @@ if (GVAR(requirePoliceAuth) && {
 private _success = [_tableName, _recordId] call FUNC(deleteRecordServer);
 
 if (_success) then {
-    [QGVAR(recordChanged), [_tableName, str _recordId, "delete"]] call CBA_fnc_globalEvent;
+    private _recordIdString = if (_recordId isEqualType 0) then { str _recordId } else { _recordId };
+    [QGVAR(recordChanged), [_tableName, _recordIdString, "delete"]] call CBA_fnc_globalEvent;
 };
 
 if (GVAR(debug)) then {

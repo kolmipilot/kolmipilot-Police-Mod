@@ -27,6 +27,7 @@ GVAR(currentTab) = 0;
 GVAR(filterWantedOnly) = false;
 GVAR(currentRecord) = createHashMap;
 GVAR(currentRecordId) = "";
+GVAR(currentVehicleId) = "";
 GVAR(modalWantedState) = false;
 GVAR(isSearching) = false;
 GVAR(isSaving) = false;
@@ -47,8 +48,9 @@ private _officerText = if (_officerRank isNotEqualTo "") then {
 (_display displayCtrl IDC_TABLET_MODAL_WANTED_BG) ctrlShow false;
 (_display displayCtrl IDC_TABLET_MODAL_WANTED_GROUP) ctrlShow false;
 
-// Hide Vehicles Tab group
+// Hide Vehicles Tab group until selected.
 (_display displayCtrl IDC_TABLET_VEHICLES_GROUP) ctrlShow false;
+(_display displayCtrl IDC_TABLET_VEHICLE_EMPTY_NOTICE) ctrlShow true;
 
 // Show Empty Notice initially, hide record group
 (_display displayCtrl IDC_TABLET_RECORD_GROUP) ctrlShow false;

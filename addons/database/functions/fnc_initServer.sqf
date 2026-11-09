@@ -22,7 +22,7 @@ GVAR(tables) = createHashMap;
 
 // Initialize core tables
 ["persons", "id"] call FUNC(createTableServer);
-["vehicles", "plate"] call FUNC(createTableServer);
+["vehicles", "vehicleId"] call FUNC(createTableServer);
 
 // Register server-side CBA network events
 [QGVAR(queryServer), {
@@ -44,6 +44,18 @@ GVAR(tables) = createHashMap;
     params ["_requestId", "_senderOwner", "_clientUnit", "_tableName", "_recordId"];
     [_requestId, _senderOwner, _clientUnit, _tableName, _recordId] call FUNC(handleDeleteRecordServer);
 }] call CBA_fnc_addEventHandler;
+
+private _pendingPersons = missionNamespace getVariable [QGVAR(pendingPersonRegistrations), []];
+missionNamespace setVariable [QGVAR(pendingPersonRegistrations), []];
+{
+    _x call FUNC(registerConfiguredPerson);
+} forEach _pendingPersons;
+
+private _pendingVehicles = missionNamespace getVariable [QGVAR(pendingVehicleRegistrations), []];
+missionNamespace setVariable [QGVAR(pendingVehicleRegistrations), []];
+{
+    _x call FUNC(registerVehicleServer);
+} forEach _pendingVehicles;
 
 if (GVAR(debug)) then {
     ["Database server backend initialized successfully."] call FUNC(log);

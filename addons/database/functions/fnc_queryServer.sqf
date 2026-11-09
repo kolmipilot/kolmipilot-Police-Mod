@@ -43,12 +43,21 @@ if (count _criteria == 0) then {
         private _rec = _y;
         private _match = true;
 
-        // Text search across full name / first name / last name
+        // Text search across relevant identity and registration fields.
         if (_searchStr isNotEqualTo "") then {
-            private _full = toLower (_rec getOrDefault ["fullName", ""]);
-            private _first = toLower (_rec getOrDefault ["firstName", ""]);
-            private _last = toLower (_rec getOrDefault ["lastName", ""]);
-            if (_full find _searchStr == -1 && {_first find _searchStr == -1} && {_last find _searchStr == -1}) then {
+            private _searchFields = switch (_tableName) do {
+                case "persons": { ["fullName", "firstName", "lastName", "uid"] };
+                case "vehicles": { ["plate", "ownerId", "ownerName", "className", "displayName", "vehicleId"] };
+                default { ["id", "name"] };
+            };
+            private _fieldMatches = false;
+            {
+                private _fieldValue = toLower str (_rec getOrDefault [_x, ""]);
+                if (_fieldValue find _searchStr != -1) exitWith {
+                    _fieldMatches = true;
+                };
+            } forEach _searchFields;
+            if (!_fieldMatches) then {
                 _match = false;
             };
         };

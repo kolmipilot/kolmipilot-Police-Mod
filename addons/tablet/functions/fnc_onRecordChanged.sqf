@@ -1,4 +1,5 @@
 #include "..\script_component.hpp"
+#include "..\UI\defineRes.hpp"
 /*
  * Author: kolmipilot
  * Description: Handles database record changed events to refresh active tablet views.
@@ -23,10 +24,28 @@ params [
     ["_action", "save", [""]]
 ];
 
-if (_tableName isNotEqualTo "persons") exitWith {};
-
 private _display = uiNamespace getVariable [QGVAR(display), displayNull];
 if (isNull _display) exitWith {};
+
+if (_tableName isEqualTo "vehicles") exitWith {
+    if (GVAR(currentTab) != 2) exitWith {};
+    if (_recordId isEqualTo GVAR(currentVehicleId)) then {
+        if (_action isEqualTo "delete") then {
+            GVAR(currentVehicleId) = "";
+            (_display displayCtrl IDC_TABLET_VEHICLE_EMPTY_NOTICE) ctrlShow true;
+        } else {
+            ["vehicles", _recordId, {
+                params ["_record", "_args", "_found"];
+                if (_found) then {
+                    [_record] call FUNC(updateVehicleRecordView);
+                };
+            }] call EFUNC(database,getRecord);
+        };
+    };
+    call FUNC(searchVehicles);
+};
+
+if (_tableName isNotEqualTo "persons") exitWith {};
 
 // If currently viewing the changed record, refresh it
 if (_recordId isEqualTo GVAR(currentRecordId)) then {

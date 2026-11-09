@@ -61,6 +61,34 @@
             <English>Police officer</English>
             <Polish>Funkcjonariusz policji</Polish>
         </Key>
+        <Key ID="STR_KOLMIP_Tablet_Eden_PersonStatus_Description">
+            <English>Explicitly register this unit, regardless of side, as innocent or wanted. Unconfigured units have no database record and no behavior changes.</English>
+            <Polish>Jawnie zarejestruj tę jednostkę, niezależnie od strony, jako niewinną lub poszukiwaną. Nieskonfigurowane jednostki nie mają wpisu w bazie i ich zachowanie się nie zmienia.</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Eden_PersonStatus_DisplayName">
+            <English>Person database status</English>
+            <Polish>Status osoby w bazie</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Eden_PersonStatus_Innocent">
+            <English>Innocent (register)</English>
+            <Polish>Niewinny (zarejestruj)</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Eden_PersonStatus_NotConfigured">
+            <English>Not configured</English>
+            <Polish>Nieskonfigurowany</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Eden_PersonStatus_Wanted">
+            <English>Wanted (register)</English>
+            <Polish>Poszukiwany (zarejestruj)</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Eden_WantedReason_Description">
+            <English>Optional warrant reason for this unit. Used when its database status is wanted.</English>
+            <Polish>Opcjonalny powód poszukiwania tej jednostki. Używany, gdy jej status w bazie to poszukiwany.</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Eden_WantedReason_DisplayName">
+            <English>Warrant reason (optional)</English>
+            <Polish>Powód poszukiwania (opcjonalnie)</Polish>
+        </Key>
         <Key ID="STR_KOLMIP_Tablet_Filter_ShowAll">
             <English>Filter: Show All (Click: Show Wanted Only)</English>
             <Polish>Filtr: Wszyscy (Kliknij: Tylko poszukiwani)</Polish>
@@ -112,6 +140,58 @@
         <Key ID="STR_KOLMIP_Tablet_Modal_Wanted_Title">
             <English>UPDATE ARREST WARRANT STATUS</English>
             <Polish>AKTUALIZACJA LISTU GOŃCZEGO</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Module_ConfigurePerson">
+            <English>Configure Person Status</English>
+            <Polish>Ustaw status osoby</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Module_ConfigurePerson_Description">
+            <English>Synchronize with one or more units of any side to explicitly register them as innocent or wanted. Optionally enter a warrant reason. No unit behavior is changed.</English>
+            <Polish>Połącz z jedną lub wieloma jednostkami dowolnej strony, aby jawnie zarejestrować je jako niewinne lub poszukiwane. Opcjonalnie wpisz powód poszukiwania. Zachowanie jednostek się nie zmienia.</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Module_RegisterVehicle">
+            <English>Register Vehicle</English>
+            <Polish>Zarejestruj pojazd</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Module_RegisterVehicle_Description">
+            <English>Synchronize with one or more vehicles and optionally a person to register the plate and owner. Synchronizing a person is easiest for AI owners; manual owner ID or player UID also works. Plates must be unique and 3-10 letters, digits or hyphens.</English>
+            <Polish>Połącz z pojazdami i opcjonalnie osobą, aby zarejestrować tablicę i właściciela. Dla właściciela AI najłatwiej połączyć moduł z osobą; można też podać ID osoby lub UID gracza. Tablica musi być unikalna i zawierać 3–10 liter, cyfr lub łączników.</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Module_VehicleNotes">
+            <English>Registration notes (optional)</English>
+            <Polish>Notatki rejestracyjne (opcjonalnie)</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Module_VehicleOwner">
+            <English>Owner person ID or player UID (optional; syncing a person is easier for AI)</English>
+            <Polish>ID osoby lub UID gracza (opcjonalnie; połączenie z osobą jest łatwiejsze dla AI)</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Module_VehicleOwner_Description">
+            <English>Must identify an existing person record by person ID or player UID. A synchronized person is registered automatically if needed.</English>
+            <Polish>Musi wskazywać istniejący wpis osoby przez jej ID lub UID gracza. Połączona osoba zostanie automatycznie zarejestrowana, jeśli to konieczne.</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Module_VehiclePlate">
+            <English>License plate</English>
+            <Polish>Tablica rejestracyjna</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Module_VehiclePlate_Description">
+            <English>Unique plate, 3-10 letters, digits or hyphens.</English>
+            <Polish>Unikalna tablica: 3–10 liter, cyfr lub łączników.</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Module_VehicleWanted">
+            <English>Vehicle is wanted</English>
+            <Polish>Pojazd jest poszukiwany</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Module_VehicleWantedReason">
+            <English>Wanted reason (optional)</English>
+            <Polish>Powód poszukiwania (opcjonalnie)</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Module_VehicleWanted_Description">
+            <English>Mark this registered vehicle as wanted.</English>
+            <Polish>Oznacz zarejestrowany pojazd jako poszukiwany.</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Modules_Category">
+            <English>Police Mod</English>
+            <Polish>Police Mod</Polish>
         </Key>
         <Key ID="STR_KOLMIP_Tablet_Msg_TabletMissing">
             <English>Tablet Missing: You do not possess a Police Tablet.</English>
@@ -176,6 +256,46 @@
         <Key ID="STR_KOLMIP_Tablet_Tab_Wanted">
             <English>WANTED LIST</English>
             <Polish>POSZUKIWANI</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Vehicle_Class">
+            <English>Class</English>
+            <Polish>Klasa</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Vehicle_NoOwner">
+            <English>Not registered</English>
+            <Polish>Nie zarejestrowano</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Vehicle_Notes">
+            <English>Notes</English>
+            <Polish>Notatki</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Vehicle_Owner">
+            <English>Owner</English>
+            <Polish>Właściciel</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Vehicle_Plate">
+            <English>Plate</English>
+            <Polish>Tablica</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Vehicle_Registered">
+            <English>Registered</English>
+            <Polish>Zarejestrowany</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Vehicle_SelectRecord">
+            <English>&lt;t align='center' size='1.1' color='#657585'&gt;Select a vehicle to view its registration record.&lt;/t&gt;</English>
+            <Polish>&lt;t align='center' size='1.1' color='#657585'&gt;Wybierz pojazd, aby wyświetlić jego wpis rejestracyjny.&lt;/t&gt;</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Vehicle_Status">
+            <English>Registration status</English>
+            <Polish>Status rejestracji</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Vehicle_Wanted">
+            <English>WANTED</English>
+            <Polish>POSZUKIWANY</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Vehicle_WantedReason">
+            <English>Wanted reason</English>
+            <Polish>Powód poszukiwania</Polish>
         </Key>
         <Key ID="STR_KOLMIP_Tablet_Vehicles_PlaceholderNotice">
             <English>&lt;t size='1.3' font='RobotoCondensedBold' color='#40a0ff'&gt;VEHICLE DATABASE MODULE&lt;/t&gt;&lt;br/&gt;&lt;br/&gt;&lt;t color='#a0b0c0'&gt;The vehicle registry and plate lookup system will be available in Phase 4.&lt;br/&gt;&lt;br/&gt;Officers will be able to search license plates, verify registered owners, and inspect vehicle warrant records directly from this console.&lt;/t&gt;</English>
