@@ -19,14 +19,6 @@ private _record = +_recordData;
 private _plateInput = _record getOrDefault ["plate", ""];
 if !(_plateInput isEqualType "") exitWith { [false, ""] };
 private _plate = toUpper _plateInput;
-private _plateChars = toArray _plate;
-private _validPlate = count _plateChars >= 3 && {count _plateChars <= 10};
-{
-    if !(_x == 45 || {_x >= 48 && {_x <= 57}} || {_x >= 65 && {_x <= 90}}) exitWith {
-        _validPlate = false;
-    };
-} forEach _plateChars;
-if (!_validPlate) exitWith { [false, ""] };
 
 private _table = ["vehicles"] call FUNC(getTableServer);
 if (isNil "_table") exitWith { [false, ""] };
@@ -54,6 +46,31 @@ if (_vehicleId isEqualTo "") then {
     _vehicleId = format ["VEH_%1", _nextId];
     _table set ["nextId", _nextId + 1];
 };
+
+if (_plate isEqualTo "") then {
+    private _nextPlateId = _table getOrDefault ["nextPlateId", 1000];
+    private _plateTaken = true;
+    while {_plateTaken} do {
+        _plate = format ["KOL-%1", _nextPlateId];
+        _nextPlateId = _nextPlateId + 1;
+        _plateTaken = false;
+        {
+            if ((_y getOrDefault ["plate", ""]) isEqualTo _plate) exitWith {
+                _plateTaken = true;
+            };
+        } forEach _records;
+    };
+    _table set ["nextPlateId", _nextPlateId];
+};
+
+private _plateChars = toArray _plate;
+private _validPlate = count _plateChars >= 3 && {count _plateChars <= 10};
+{
+    if !(_x == 45 || {_x >= 48 && {_x <= 57}} || {_x >= 65 && {_x <= 90}}) exitWith {
+        _validPlate = false;
+    };
+} forEach _plateChars;
+if (!_validPlate) exitWith { [false, ""] };
 
 private _ownerIdentifier = _record getOrDefault ["ownerId", ""];
 if !(_ownerIdentifier isEqualType "") exitWith { [false, ""] };

@@ -30,8 +30,26 @@ workshop = [
     "843632231", # RHSSAF
 ]
 
-[cfp]
-extends = "cup"
+[wbk]
+extends = "default"
 workshop = [
-    "1369691841", # CFP
+    "2291129343", # WBK mele
+]
+
+[cqb]
+extends = "default"
+workshop = [
+    "3335065609", # phenosi cqb interacions
+]
+
+[ivory]
+extends = "default"
+workshop = [
+    "2959425820", # ivory car pack edited
+]
+
+[em]
+extends = "default"
+workshop = [
+    "2629127571", # expansion mod police
 ]

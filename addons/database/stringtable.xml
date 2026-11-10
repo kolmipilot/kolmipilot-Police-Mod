@@ -13,6 +13,14 @@
             <English>Outputs database query and transaction events to the RPT log</English>
             <Polish>Zapisuje zdarzenia zapytań i transakcji bazy danych do logu RPT</Polish>
         </Key>
+        <Key ID="STR_KOLMIP_Database_Setting_EnableEncounterRegistration">
+            <English>Register Records During Police Encounters</English>
+            <Polish>Rejestruj wpisy podczas interwencji policji</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Database_Setting_EnableEncounterRegistration_Tooltip">
+            <English>When enabled, a police officer's explicit ID or vehicle check can create a record for that encountered unit or vehicle. Unchecked units and vehicles are not registered automatically.</English>
+            <Polish>Po włączeniu jawne sprawdzenie tożsamości lub pojazdu przez policjanta może utworzyć wpis dla napotkanej jednostki lub pojazdu. Niesprawdzone jednostki i pojazdy nie są rejestrowane automatycznie.</Polish>
+        </Key>
         <Key ID="STR_KOLMIP_Database_Setting_MaxSearchResults">
             <English>Max Search Results</English>
             <Polish>Maksymalna liczba wyników wyszukiwania</Polish>

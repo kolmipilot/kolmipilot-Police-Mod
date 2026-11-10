@@ -116,19 +116,23 @@ Implemented only the requested innocent/wanted registration choice. Civilian beh
 - [x] Verify module placement/configuration in Eden and runtime behavior through Zeus in multiplayer.
 - [ ] Fix overlaping windows, change warranty, add wyrok
 
-## Phase 6 — Dynamic Police Interactions and Encounter-Based Records
+## Phase 6 — Dynamic Police Interactions and Encounter-Based Records, Simple Implementation
 
-- [ ] Implement police interactions with civilians on foot and in vehicles, including stopping, inspection, and identity/badge presentation as specified.
-- [ ] Support initiating conversations or inspections and retrieving or presenting the relevant identity/badge information.
-- [ ] On first eligible encounter, register the unit only when the configured registration rules allow it; retrieve existing records for already registered units.
-- [ ] Add configurable civilian behavior types and randomized behavior/dialogue, including cooperative, uncooperative, fleeing, and hostile cases.
-- [ ] Add ACE interactions on vehicles and suitable ACE self-interactions to check plates on nearby vehicles on foot and vehicles ahead of or behind the officer's vehicle when checking from inside a vehicle; show results as ACE structured text, not hints.
-- [ ] Allow officers to check the assigned plate, registration, owner, and wanted status during vehicle interactions.
-- [ ] Support encounter-based vehicle registration when allowed by mission configuration, linking the vehicle to its owner or assigned identity.
-- [ ] Generate a unique plate when a vehicle is first registered dynamically, while preserving manually assigned plates and preventing collisions.
-- [ ] Keep networked interactions and database changes server-authoritative, multiplayer-safe, and limited to the data required by participants.
-- [ ] Verify registration rules, interaction outcomes, generated/manual plate handling, vehicle checks, and synchronization in a dedicated multiplayer environment.
-- [ ] If not listed above add option to stop vheicles or civilan on foot.
-- [ ] Add dialouge option to ask civilian for id, driving license, ask what he is doing here. If he is wanted there is chance he wont do anything, he will start running, or his side will change to opfor then he will take out gun and start shooting. for now make this system simple, in the future we will amke it randomoise etc. for now use ace inteaction system to interact and ace structured system or if arma have its own  to show civilian text. of course keep it in mind that if talking about civilian it can be also bluefor, opfor greenfor.
+- [x] Add ACE person interactions for ID, driving-license, and purpose checks; display responses and record results with ACE structured text.
+- [x] Register a person on explicit interaction only when encounter registration is enabled; retrieve existing records for registered units.
+- [x] Add ACE vehicle interactions for plate checks and display results with ACE structured text.
+- [x] Register checked vehicles only when encounter registration is enabled and link the current driver as owner when available.
+- [x] Generate a unique plate for dynamically registered vehicles while preserving existing/manual/Ivory plates.
+- [x] Keep encounter requests authorized and validate stop and wanted-AI actions on the server before dispatching actions to the AI's local machine.
+- [x] Add a configurable keybind and scroll-menu action to stop the nearest person or vehicle in front; play `gestureFreeze` when the officer is on foot.
+- [x] Register the stopped person, or the vehicle and its driver, during the takedown when encounter registration is enabled.
+- [x] Add ACE interactions to release a stopped person or vehicle.
+- [x] Add a simple wanted-AI reaction: ignore the officer, flee, or change to OPFOR and attack when armed.
+- [x] In Eden and multiplayer, verify the vanilla `addAction` takedown entry appears in the scroll menu on foot and from a patrol vehicle, and follows the player when entering, exiting, or respawning.
+- [x] Test the maximum takedown distance settings: defaults are 20 m on foot and 100 m from a patrol vehicle; confirm targets inside the configured distance can be selected and targets beyond it cannot.
+- [x] Verify takedown selects only people on foot or occupied vehicles with a person driving, never animals, empty vehicles, or vehicles with no person driver.
+- [x] Verify takedown silently registers an encountered person and, for occupied vehicles, a plate and driver owner when encounter registration is enabled; confirm officers can then use ACE interactions/tablet checks and release a stopped person or vehicle.
+- [x] Verify the keybind still works and that takedown itself displays no identity, plate, or stop-target information.
+- [x] Verify wanted-AI reactions and Ivory/manual/generated plate behavior in Eden and multiplayer runtime tests.
 
 TODO phases 3, 4, and 6 split the database/tablet, vehicle-registration, and interaction work described in Specification Phase 3. TODO phase 5 covers the Eden/Zeus configuration described in Specification Phase 4; the vehicle-specific registration module is planned in phase 4 so manual registration can precede dynamic encounters.

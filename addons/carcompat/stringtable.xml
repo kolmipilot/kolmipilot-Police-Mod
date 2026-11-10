@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="KOLMIP">
+    <Package name="CarCompat">
+        <Key ID="STR_KOLMIP_CarCompat_DisplayName">
+            <English>CarCompat</English>
+        </Key>
+    </Package>
+</Project>

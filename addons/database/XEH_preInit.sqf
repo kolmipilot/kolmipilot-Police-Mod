@@ -34,4 +34,13 @@ PREP_RECOMPILE_END;
     1
 ] call CBA_fnc_addSetting;
 
+[
+    QGVAR(enableEncounterRegistration),
+    "CHECKBOX",
+    [LLSTRING(Setting_EnableEncounterRegistration), LLSTRING(Setting_EnableEncounterRegistration_Tooltip)],
+    [QUOTE(MOD_NAME), QUOTE(COMPONENT_BEAUTIFIED)],
+    true,
+    1
+] call CBA_fnc_addSetting;
+
 ADDON = true;

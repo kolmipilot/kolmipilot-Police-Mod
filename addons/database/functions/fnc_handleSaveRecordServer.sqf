@@ -43,8 +43,12 @@ if (GVAR(requirePoliceAuth) && {
 
 private _saveResult = [_tableName, _recordData] call FUNC(setRecordServer);
 _saveResult params ["_success", "_recordId"];
+private _savedRecord = _recordData;
 
 if (_success) then {
+    if (_tableName isEqualTo "vehicles") then {
+        _savedRecord = ["vehicles", _recordId] call FUNC(getRecordServer);
+    };
     [QGVAR(recordChanged), [_tableName, _recordId, "save"]] call CBA_fnc_globalEvent;
 };
 
@@ -52,4 +56,4 @@ if (GVAR(debug)) then {
     [format ["handleSaveRecordServer: Request '%1' saved '%2' (success: %3)", _requestId, _recordId, _success]] call FUNC(log);
 };
 
-[QGVAR(saveRecordResponse), [_requestId, _success, _recordId, _recordData], _senderOwner] call CBA_fnc_targetEvent;
+[QGVAR(saveRecordResponse), [_requestId, _success, _recordId, _savedRecord], _senderOwner] call CBA_fnc_targetEvent;

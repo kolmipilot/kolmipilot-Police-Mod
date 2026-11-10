@@ -48,7 +48,7 @@ class Cfg3DEN {
                         property = "kolmip_wantedReason";
                         control = "Edit";
                         expression = QUOTE([ARR_2(_this,_value)] call EFUNC(database,setConfiguredPersonWantedReason));
-                        defaultValue = QUOTE("");
+                        defaultValue = "";
                         condition = "objectBrain";
                         typeName = "STRING";
                     };

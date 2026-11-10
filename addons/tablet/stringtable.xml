@@ -1,9 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="KOLMIP">
     <Package name="Tablet">
+        <Key ID="STR_KOLMIP_Tablet_Action_AskPurpose">
+            <English>Ask what they are doing here</English>
+            <Polish>Zapytaj, co tu robi</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Action_CheckId">
+            <English>Check ID</English>
+            <Polish>Sprawdź dokument tożsamości</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Action_CheckLicense">
+            <English>Check driving license</English>
+            <Polish>Sprawdź prawo jazdy</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Action_CheckVehicle">
+            <English>Check registration plate</English>
+            <Polish>Sprawdź tablicę rejestracyjną</Polish>
+        </Key>
         <Key ID="STR_KOLMIP_Tablet_Action_Open">
             <English>Open Police Tablet</English>
             <Polish>Otwórz tablet policyjny</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Action_ReleasePerson">
+            <English>Let person go</English>
+            <Polish>Pozwól osobie odejść</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Action_ReleaseVehicle">
+            <English>Let vehicle go</English>
+            <Polish>Pozwól pojazdowi odjechać</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Action_Takedown">
+            <English>Stop nearest person or occupied vehicle</English>
+            <Polish>Zatrzymaj najbliższą osobę lub pojazd z kierowcą</Polish>
         </Key>
         <Key ID="STR_KOLMIP_Tablet_Btn_AddCrime">
             <English>+ Add Charge</English>
@@ -117,6 +145,14 @@
             <English>Opens the Police Mobile Data Terminal interface</English>
             <Polish>Otwiera interfejs Mobilnego Terminala Policyjnego</Polish>
         </Key>
+        <Key ID="STR_KOLMIP_Tablet_Key_StopTarget">
+            <English>Stop nearest person or vehicle</English>
+            <Polish>Zatrzymaj najbliższą osobę lub pojazd</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Key_StopTarget_Tooltip">
+            <English>Stop the nearest person or vehicle in front. Default: Ctrl+Shift+S.</English>
+            <Polish>Zatrzymaj najbliższą osobę lub pojazd przed sobą. Domyślnie: Ctrl+Shift+S.</Polish>
+        </Key>
         <Key ID="STR_KOLMIP_Tablet_Modal_Crime_Charge">
             <English>Charge Title / Violation:</English>
             <Polish>Tytuł zarzutu / Wykroczenie:</Polish>
@@ -193,6 +229,26 @@
             <English>Police Mod</English>
             <Polish>Police Mod</Polish>
         </Key>
+        <Key ID="STR_KOLMIP_Tablet_Msg_DriverRegistrationFailed">
+            <English>Could not register the vehicle's driver.</English>
+            <Polish>Nie udało się zarejestrować kierowcy pojazdu.</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Msg_NoPersonRecord">
+            <English>No person record is available for this unit.</English>
+            <Polish>Brak wpisu tej osoby w bazie.</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Msg_NoStopTarget">
+            <English>No person or vehicle in front of you.</English>
+            <Polish>Brak osoby lub pojazdu przed tobą.</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Msg_PersonLoadFailed">
+            <English>Person record could not be loaded.</English>
+            <Polish>Nie udało się wczytać wpisu osoby.</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Msg_StopRequested">
+            <English>Stop requested:</English>
+            <Polish>Wezwano do zatrzymania:</Polish>
+        </Key>
         <Key ID="STR_KOLMIP_Tablet_Msg_TabletMissing">
             <English>Tablet Missing: You do not possess a Police Tablet.</English>
             <Polish>Brak tabletu: Nie posiadasz tabletu policyjnego.</Polish>
@@ -201,6 +257,58 @@
             <English>Access Denied: Officer credentials not authorized by server.</English>
             <Polish>Odmowa dostępu: Brak autoryzacji policyjnej serwera.</Polish>
         </Key>
+        <Key ID="STR_KOLMIP_Tablet_Msg_VehicleLoadFailed">
+            <English>Vehicle record could not be loaded.</English>
+            <Polish>Nie udało się wczytać wpisu pojazdu.</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Msg_VehicleNotRegistered">
+            <English>Vehicle is not registered.</English>
+            <Polish>Pojazd nie jest zarejestrowany.</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Msg_VehicleRegistrationFailed">
+            <English>Vehicle registration failed. Check whether its plate is already assigned.</English>
+            <Polish>Rejestracja pojazdu nie powiodła się. Sprawdź, czy tablica nie jest już przypisana.</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Person_DrivingLicense">
+            <English>Driving license</English>
+            <Polish>Prawo jazdy</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Person_Identity">
+            <English>Identity</English>
+            <Polish>Tożsamość</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Person_InnocentPurpose">
+            <English>%1 says they are just passing through.</English>
+            <Polish>%1 mówi, że tylko przechodzi.</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Person_Name">
+            <English>Name</English>
+            <Polish>Imię i nazwisko</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Person_NoWarrant">
+            <English>No active warrant</English>
+            <Polish>Brak aktywnego listu gończego</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Person_NotValid">
+            <English>Not valid</English>
+            <Polish>Nieważne</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Person_Record">
+            <English>Record</English>
+            <Polish>Numer wpisu</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Person_Valid">
+            <English>Valid</English>
+            <Polish>Ważne</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Person_Wanted">
+            <English>WANTED</English>
+            <Polish>POSZUKIWANY</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Person_WantedPurpose">
+            <English>%1 looks nervous and avoids answering.</English>
+            <Polish>%1 wygląda na zdenerwowanego i unika odpowiedzi.</Polish>
+        </Key>
         <Key ID="STR_KOLMIP_Tablet_PoliceTablet_Description">
             <English>Ruggedized police tablet providing mobile access to the central police database, person records, and criminal warrants.</English>
             <Polish>Wzmocniony tablet policyjny zapewniający mobilny dostęp do centralnej bazy danych policji, kartotek osób i listów gończych.</Polish>
@@ -208,6 +316,22 @@
         <Key ID="STR_KOLMIP_Tablet_PoliceTablet_DisplayName">
             <English>Police Mobile Data Terminal</English>
             <Polish>Mobilny Terminal Policyjny</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Setting_MaxStopDistanceInVehicle">
+            <English>Maximum takedown distance from a patrol vehicle</English>
+            <Polish>Maksymalny zasięg zatrzymania z pojazdu</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Setting_MaxStopDistanceInVehicle_Tooltip">
+            <English>Maximum distance in meters for the takedown action when the officer is in a patrol vehicle.</English>
+            <Polish>Maksymalna odległość w metrach dla zatrzymania, gdy policjant znajduje się w radiowozie.</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Setting_MaxStopDistanceOnFoot">
+            <English>Maximum takedown distance on foot</English>
+            <Polish>Maksymalny zasięg zatrzymania pieszego</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Setting_MaxStopDistanceOnFoot_Tooltip">
+            <English>Maximum distance in meters for the takedown action when the officer is on foot.</English>
+            <Polish>Maksymalna odległość w metrach dla zatrzymania, gdy policjant jest pieszo.</Polish>
         </Key>
         <Key ID="STR_KOLMIP_Tablet_Setting_SoundEffects">
             <English>Tablet UI Sound Effects</English>
@@ -256,6 +380,10 @@
         <Key ID="STR_KOLMIP_Tablet_Tab_Wanted">
             <English>WANTED LIST</English>
             <Polish>POSZUKIWANI</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Tablet_Vehicle_Check">
+            <English>Vehicle check</English>
+            <Polish>Kontrola pojazdu</Polish>
         </Key>
         <Key ID="STR_KOLMIP_Tablet_Vehicle_Class">
             <English>Class</English>
