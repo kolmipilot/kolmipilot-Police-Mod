@@ -17,6 +17,6 @@
 
 params [["_tableName", "", [""]]];
 
-if (!isServer || {_tableName isEqualTo ""} || {isNil QGVAR(tables)}) exitWith { nil };
+if (!isServer || _tableName isEqualTo "" || {isNil QGVAR(tables)}) exitWith { nil };
 
 GVAR(tables) getOrDefault [_tableName, nil]

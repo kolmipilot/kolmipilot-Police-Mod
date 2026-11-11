@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="KOLMIP">
-    <Package name="emCompat">
+    <Package name="EmCompat">
         <Key ID="STR_KOLMIP_EmCompat_DisplayName">
             <English>EmCompat</English>
         </Key>

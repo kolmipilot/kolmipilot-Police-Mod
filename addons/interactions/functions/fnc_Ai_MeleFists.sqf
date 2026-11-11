@@ -140,7 +140,7 @@ if (
 _unitWithSword addEventHandler ["HandleDamage", {
     params ["_objHit", "", "", "_hitter"];
 
-    if (!isNull _hitter && {_objHit isNotEqualTo _hitter}) then {
+    if (!isNull _hitter && _objHit isNotEqualTo _hitter) then {
         _objHit removeAllEventHandlers "HandleDamage";
         _objHit setDamage 1;
 

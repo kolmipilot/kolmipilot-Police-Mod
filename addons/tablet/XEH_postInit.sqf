@@ -47,7 +47,7 @@ if (hasInterface) then {
         },
         {
             params ["_target", "_player"];
-            (_target isKindOf "CAManBase") && {_target isNotEqualTo _player} && {[_player] call FUNC(canUsePoliceActions)}
+            (_target isKindOf "CAManBase") && _target isNotEqualTo _player && {[_player] call FUNC(canUsePoliceActions)}
         }
     ] call ace_interact_menu_fnc_createAction;
     ["CAManBase", 0, ["ACE_MainActions"], _personIdAction, true] call ace_interact_menu_fnc_addActionToClass;
