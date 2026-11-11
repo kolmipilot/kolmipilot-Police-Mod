@@ -143,16 +143,19 @@ Implemented only the requested innocent/wanted registration choice. Civilian beh
 - [x] Add a configurable CBA keybind to open the radial menu
 - [x] Wait for accept
 - [x] Swap the equipped handgun or primary weapon with a selected carried weapon while preserving weapon state.
-- [ ] Verify primary weapon switching and state preservation in-game.
+- [x] Verify primary weapon switching and state preservation in-game.
 - [x] Final acceptation
-- [ ] Replace radial-menu text labels with user-provided equipment icons
+- [x] Replace radial-menu text labels with equipment icons
 
 ## Phase 8 - Dynamicaly advanced civilian innocent / wanted interaction system
 
-### Phase 1 - Create new addon named something about civilian interactions
+### Phase 1 - Move already existing base functions, and create new base fucntion into interactions addon.
 
+- [ ] Wbk mele remoteExec and spawn to scheduler, if possible, mayaby some fucntions needs to be called scheduled
 - [ ] Move alredy ready basic interaction system from phase 6. Checking plates by ace interaction menu should stay in tablet.
-- [ ] Create on yourself, or let me do it to create functions handling, getting out, attacking cops, do on yourself running away script, with random chance after some time unit will surender, or start fighting with function mentioned aboce.
+- [ ] Create function handling getting out.
+- [ ] Create function handling attacking cops
+- [ ]Create function handling  running away script, with random chance after some time unit will surender, or start fighting with function mentioned above.
 
 ### Phase 2 - Implement DynamicInteractionSystem.md
 
