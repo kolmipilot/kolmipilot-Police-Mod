@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="KOLMIP">
+    <Package name="Equipment">
+        <Key ID="STR_KOLMIP_Equipment_Key_OpenRadialMenu">
+            <English>Open Equipment Radial Menu</English>
+            <Polish>Otwórz kołowe menu wyposażenia</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Equipment_Key_OpenRadialMenu_Tooltip">
+            <English>Opens the carried weapon radial menu</English>
+            <Polish>Otwiera kołowe menu broni</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Equipment_Radial_Carried">
+            <English>CARRIED</English>
+            <Polish>POSIADANE</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Equipment_Radial_ClickToEquip">
+            <English>CLICK EQUIPMENT TO EQUIP</English>
+            <Polish>KLIKNIJ WYPOSAŻENIE, ABY ZAŁOŻYĆ</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Equipment_Radial_Empty">
+            <English>NO CARRIED WEAPONS FOUND</English>
+            <Polish>NIE ZNALEZIONO BRONI</Polish>
+        </Key>
+        <Key ID="STR_KOLMIP_Equipment_Radial_More">
+            <English>+%1 MORE</English>
+            <Polish>+%1 WIĘCEJ</Polish>
+        </Key>
+    </Package>
+</Project>

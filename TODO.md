@@ -135,4 +135,33 @@ Implemented only the requested innocent/wanted registration choice. Civilian beh
 - [x] Verify the keybind still works and that takedown itself displays no identity, plate, or stop-target information.
 - [x] Verify wanted-AI reactions and Ivory/manual/generated plate behavior in Eden and multiplayer runtime tests.
 
+## Phase 7 - radial equipment menu
+
+- [x] Create ui / gui radial menu element
+- [x] Wait for my acceptaion
+- [x] Dynamically load carried primary and secondary weapons into the radial menu.
+- [x] Add a configurable CBA keybind to open the radial menu
+- [x] Wait for accept
+- [x] Swap the equipped handgun or primary weapon with a selected carried weapon while preserving weapon state.
+- [ ] Verify primary weapon switching and state preservation in-game.
+- [x] Final acceptation
+- [ ] Replace radial-menu text labels with user-provided equipment icons
+
+## Phase 8 - Dynamicaly advanced civilian innocent / wanted interaction system
+
+### Phase 1 - Create new addon named something about civilian interactions
+
+- [ ] Move alredy ready basic interaction system from phase 6. Checking plates by ace interaction menu should stay in tablet.
+- [ ] Create on yourself, or let me do it to create functions handling, getting out, attacking cops, do on yourself running away script, with random chance after some time unit will surender, or start fighting with function mentioned aboce.
+
+### Phase 2 - Implement DynamicInteractionSystem.md
+
+- [ ] Make functions, alghortims and other needed stuff to implement full system specifacted in `DynamicInteractionSystem.md`
+
+## Phase 9 - Add dynamicly generated muissios
+
+## Phase 10 - Add crowd spawning modules
+
+## Phase 11 - Create MAP
+
 TODO phases 3, 4, and 6 split the database/tablet, vehicle-registration, and interaction work described in Specification Phase 3. TODO phase 5 covers the Eden/Zeus configuration described in Specification Phase 4; the vehicle-specific registration module is planned in phase 4 so manual registration can precede dynamic encounters.
