@@ -18,4 +18,4 @@ params ["_unit"];
 
 private _newGroup = createGroup east;
 [_unit] joinSilent _newGroup;
-if (local _unit) then {_unit execVM "\kolmip\interactions\functions\Ai_MeleeFists_rush.sqf";};
+if (local _unit) then {_unit call FUNC(aiMeleFists)};

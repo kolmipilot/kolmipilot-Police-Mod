@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [civ1] call kolmip_interactions_fnc_AI_MeleFists;
+ * [civ1] call kolmip_interactions_fnc_aiMeleFists;
  *
  * Public: No
  */
@@ -64,17 +64,14 @@ if (
         "A_PlayerDeathAnim_15",
         "A_PlayerDeathAnim_17"
     ]) then {
-        [_unit, selectRandom ["bloodCought_1", "bloodCought_2", "bloodCought_3"], 100, 15] execVM "\WebKnight_StarWars_Mechanic\createSoundGlobal.sqf";
-    } else {
-        [_unit, selectRandom [
-            "New_Death_1", "New_Death_2", "New_Death_3",
-            "New_Death_4", "New_Death_5", "New_Death_6",
-            "New_Death_7", "New_Death_8", "New_Death_9",
-            "New_Death_10", "dobi_scream_1", "dobi_scream_2",
-            "dobi_scream_3", "dobi_scream_4", "dobi_fall",
-            "dobi_scream_5", "dobi_scream_6"
-        ], 80, 15] execVM "\WebKnight_StarWars_Mechanic\createSoundGlobal.sqf";
-    };
+		private _deathSound = selectRandom ["New_Death_1", "New_Death_2", "New_Death_3", "New_Death_4", "New_Death_5", "New_Death_6", "New_Death_7", "New_Death_8", "New_Death_9", "New_Death_10", "dobi_scream_1", "dobi_scream_2", "dobi_scream_3", "dobi_scream_4", "dobi_fall", "dobi_scream_5", "dobi_scream_6"];
+		private _soundRadius = 80;
+		if ((animationState _unit) in ["lightsaber_death_3", "lightsaber_death_1", "A_PlayerDeathAnim_22", "A_PlayerDeathAnim_15", "A_PlayerDeathAnim_17"]) then {
+			_deathSound = selectRandom ["bloodCought_1", "bloodCought_2", "bloodCought_3"];
+			_soundRadius = 100;
+		};
+		[QGVAR(playDeathSound), [_unit, _deathSound, _soundRadius, 15]] call CBA_fnc_globalEvent;
+	};
 };
 private _deathPos = "Land_HelipadEmpty_F" createVehicle [0,0,0];
 _deathPos attachTo [_unit, [0, 0, 0], "head"];
@@ -137,27 +134,41 @@ if (
 };
 };
 
+_unitWithSword allowDamage true;
+
 _unitWithSword addEventHandler ["HandleDamage", {
-    params ["_objHit", "", "", "_hitter"];
+    params ["_objHit", "_selection", "_damage", "_hitter"];
 
-    if (!isNull _hitter && _objHit isNotEqualTo _hitter) then {
-        _objHit removeAllEventHandlers "HandleDamage";
-        _objHit setDamage 1;
-
-        private _rndAnim = selectRandom [
-            "lightsaber_death_1",
-            "lightsaber_death_2",
-            "lightsaber_death_3",
-            "lightsaber_death_4",
-            "lightsaber_death_5",
-            "lightsaber_death_6",
-            "lightsaber_death_7",
-            "flamethrower_burning_6",
-            "flamethrower_burning_7"
-        ];
-
-        [_objHit, _rndAnim] remoteExec ["switchMove", 0];
+    private _currentDamage = if (_selection == "") then {
+        damage _objHit
+    } else {
+        _objHit getHit _selection
     };
+    private _addedDamage = _damage - _currentDamage;
+    private _newDamage = _currentDamage + (_addedDamage * 0.3);
+
+    if (!isNull _hitter && {_objHit isNotEqualTo _hitter}) then {
+
+        if (_damage >= 1 && {_selection == ""}) then {
+            _objHit removeAllEventHandlers "HandleDamage";
+
+            private _rndAnim = selectRandom [
+                "lightsaber_death_1",
+                "lightsaber_death_2",
+                "lightsaber_death_3",
+                "lightsaber_death_4",
+                "lightsaber_death_5",
+                "lightsaber_death_6",
+                "lightsaber_death_7",
+                "flamethrower_burning_6",
+                "flamethrower_burning_7"
+            ];
+
+            [_objHit, _rndAnim] remoteExec ["switchMove", 0];
+        };
+    };
+
+    _newDamage
 }];
 
 
@@ -181,7 +192,6 @@ private _actFr = [{
 	(animationState _mutant == "WBK_FISTS_GRAB_1_VICTIM")
 	) exitWith {};
 	_mutant action ["SwitchWeapon", _mutant, _mutant, 100];
-	_mutant allowDamage false;
 	_mutant disableAI "MINEDETECTION";
 	_mutant disableAI "WEAPONAIM";
 	_mutant disableAI "SUPPRESSION";
@@ -327,11 +337,15 @@ private _loopPathfindDoMove = [{
 }, 1.2, [_unitWithSword]] call CBA_fnc_addPerFrameHandler;
 
 
+[{! alive (_this select 0)}, {
 
-waitUntil {sleep 0.5; !(alive _unitWithSword)};
-[_actFr] call CBA_fnc_removePerFrameHandler;
-[_loopPathfind] call CBA_fnc_removePerFrameHandler;
-[_loopPathfindDoMove] call CBA_fnc_removePerFrameHandler;
-[_unitWithSword, {
-_this removeAllEventHandlers "HitPart";
-}] remoteExec ["spawn", [0,-2] select isDedicated,true];
+    params["_unitWithSword", "_actFr", "_loopPathfind", "_loopPathfindDoMove"];
+
+    [_actFr] call CBA_fnc_removePerFrameHandler;
+    [_loopPathfind] call CBA_fnc_removePerFrameHandler;
+    [_loopPathfindDoMove] call CBA_fnc_removePerFrameHandler;
+    [_unitWithSword, {
+        _this removeAllEventHandlers "HitPart";
+    }] remoteExec ["spawn", [0,-2] select isDedicated,true];
+
+}, [_unitWithSword, _actFr, _loopPathfind, _loopPathfindDoMove]] call CBA_fnc_waitUntilAndExecute;

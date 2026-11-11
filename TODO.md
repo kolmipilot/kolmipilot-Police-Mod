@@ -162,6 +162,8 @@ Implemented only the requested innocent/wanted registration choice. Civilian beh
 
 ## Phase 10 - Add crowd spawning modules
 
-## Phase 11 - Create MAP
+## Phase 11 - Write documenatation
+
+## Phase 12 - Create MAP
 
 TODO phases 3, 4, and 6 split the database/tablet, vehicle-registration, and interaction work described in Specification Phase 3. TODO phase 5 covers the Eden/Zeus configuration described in Specification Phase 4; the vehicle-specific registration module is planned in phase 4 so manual registration can precede dynamic encounters.
