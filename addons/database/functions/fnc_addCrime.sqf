@@ -29,7 +29,7 @@ params [
     ["_customArgs", []]
 ];
 
-if (_personId isEqualTo "" || {_crimeTitle isEqualTo ""}) exitWith {};
+if (_personId isEqualTo "" || _crimeTitle isEqualTo "") exitWith {};
 
 [_personId, {
     params ["_record", "_args", "_found"];

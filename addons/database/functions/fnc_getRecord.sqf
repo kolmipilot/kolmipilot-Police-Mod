@@ -27,7 +27,7 @@ params [
     ["_customArgs", []]
 ];
 
-if (_tableName isEqualTo "" || {_recordId isEqualTo ""}) exitWith { "" };
+if (_tableName isEqualTo "" || _recordId isEqualTo "") exitWith { "" };
 
 if (isServer && !hasInterface) exitWith {
     private _record = [_tableName, _recordId] call FUNC(getRecordServer);

@@ -36,7 +36,7 @@ if (_status in [1, 2]) then {
     private _isWanted = _status == 2;
     _unit setVariable [QGVAR(personStatus), ["", "innocent", "wanted"] select _status, true];
     _unit setVariable [QGVAR(isWanted), _isWanted, true];
-    if (_isWanted && {_wantedReason isNotEqualTo ""}) then {
+    if (_isWanted && _wantedReason isNotEqualTo "") then {
         _unit setVariable [QGVAR(wantedReason), _wantedReason, true];
     };
 };

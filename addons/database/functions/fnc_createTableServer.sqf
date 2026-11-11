@@ -21,7 +21,7 @@ params [
     ["_primaryKey", "id", [""]]
 ];
 
-if (!isServer || {_tableName isEqualTo ""}) exitWith { createHashMap };
+if (!isServer || _tableName isEqualTo "") exitWith { createHashMap };
 
 if (isNil QGVAR(tables)) then {
     GVAR(tables) = createHashMap;

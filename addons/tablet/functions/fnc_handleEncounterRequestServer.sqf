@@ -38,7 +38,7 @@ switch (_requestType) do {
             && {!((driver _target) isKindOf "Animal")}
             && {(driver _target) isKindOf "CAManBase"}
             && {alive (driver _target)};
-        if !(_isPersonOnFoot || {_hasPersonDriver}) exitWith {};
+        if !(_isPersonOnFoot || _hasPersonDriver) exitWith {};
         _target setVariable [QGVAR(stoppedForPolice), true, true];
         [QGVAR(applyEncounterAction), ["stop", _target, _officer]] call CBA_fnc_globalEvent;
     };

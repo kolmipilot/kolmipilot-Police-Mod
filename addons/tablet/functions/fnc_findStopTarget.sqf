@@ -29,7 +29,7 @@ private _closestDistance = _maxDistance;
         && {!(_candidate isKindOf "Animal")}
         && {alive _candidate}
         && {vehicle _candidate isEqualTo _candidate}
-        && {_candidate isNotEqualTo _officer};
+        && _candidate isNotEqualTo _officer;
     private _hasPersonDriver = _candidate isKindOf "AllVehicles"
         && {!(_candidate isKindOf "CAManBase")}
         && {alive _candidate}
@@ -37,10 +37,10 @@ private _closestDistance = _maxDistance;
         && {(driver _candidate) isKindOf "CAManBase"}
         && {alive (driver _candidate)};
 
-    if (_candidate isNotEqualTo _observer && {_isPersonOnFoot || {_hasPersonDriver}}) then {
+    if (_candidate isNotEqualTo _observer && {_isPersonOnFoot || _hasPersonDriver}) then {
         private _offset = (getPosWorld _candidate) vectorDiff _observerPosition;
         private _distance = _observerPosition distance (getPosWorld _candidate);
-        if ((_forward vectorDotProduct _offset) > 0 && {_distance < _closestDistance}) then {
+        if ((_forward vectorDotProduct _offset) > 0 && _distance < _closestDistance) then {
             _closestTarget = _candidate;
             _closestDistance = _distance;
         };

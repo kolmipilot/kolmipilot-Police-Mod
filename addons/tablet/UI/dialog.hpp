@@ -19,8 +19,8 @@ class GVAR(dialog) {
     idd = IDD_TABLET_DIALOG;
     movingEnable = 0;
     enableSimulation = 1;
-    onLoad = QUOTE(_this call FUNC(onDialogLoad));
-    onUnload = QUOTE(_this call FUNC(onDialogUnload));
+    onLoad = QUOTE(call FUNC(onDialogLoad));
+    onUnload = QUOTE(call FUNC(onDialogUnload));
 
     class controlsBackground {
         // Outer Rugged Tablet Bezel
@@ -212,7 +212,7 @@ class GVAR(dialog) {
             y = QUOTE(safezoneY + (safezoneH - 0.84 * safezoneH) / 2 + 0.174 * safezoneH);
             w = QUOTE(0.824 * safezoneW * 0.36 - 0.010 * safezoneW);
             h = QUOTE(0.824 * safezoneH - 0.332 * safezoneH);
-            onLBSelChanged = QUOTE(if (GVAR(currentTab) == 2) then {_this call FUNC(onVehicleListSelect)} else {_this call FUNC(onPersonsListSelect)});
+            onLBSelChanged = QUOTE(if (GVAR(currentTab) == 2) then {call FUNC(onVehicleListSelect)} else {call FUNC(onPersonsListSelect)});
         };
 
         class ResultsCount: GVAR(RscText) {

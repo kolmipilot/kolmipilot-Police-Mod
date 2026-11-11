@@ -14,7 +14,7 @@
  */
 
 private _display = uiNamespace getVariable [QGVAR(display), displayNull];
-if (isNull _display || {GVAR(isSearching)}) exitWith {};
+if (isNull _display || GVAR(isSearching)) exitWith {};
 GVAR(isSearching) = true;
 private _searchTab = GVAR(currentTab);
 

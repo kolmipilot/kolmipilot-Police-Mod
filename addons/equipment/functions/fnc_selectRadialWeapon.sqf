@@ -83,7 +83,7 @@ private _addWeaponState = {
     if !(_class in weapons _targetUnit) exitWith {false};
 
     {
-        if (_x isEqualType "" && {_x isNotEqualTo ""}) then {
+        if (_x isEqualType "" && _x isNotEqualTo "") then {
             _targetUnit addWeaponItem [_class, _x, true];
         };
     } forEach [_muzzle, _pointer, _optic, _bipod];

@@ -21,7 +21,7 @@ params [
     ["_recordId", "", ["", 0]]
 ];
 
-if (!isServer || {_tableName isEqualTo ""} || {_recordId isEqualTo ""}) exitWith { false };
+if (!isServer || _tableName isEqualTo "" || _recordId isEqualTo "") exitWith { false };
 
 if (_tableName isEqualTo "vehicles") exitWith {
     [_recordId] call FUNC(deleteVehicleRecordServer)

@@ -29,7 +29,7 @@ if (_title isEqualTo "") exitWith {
 private _comboSev = _display displayCtrl IDC_TABLET_MODAL_CRIME_SEV;
 private _curSel = lbCurSel _comboSev;
 private _sev = if (_curSel >= 0) then { _comboSev lbValue _curSel } else { 1 };
-if (_sev < 1 || {_sev > 5}) then { _sev = 1; };
+if (_sev < 1 || _sev > 5) then { _sev = 1; };
 
 private _notes = ctrlText (_display displayCtrl IDC_TABLET_MODAL_CRIME_NOTES);
 

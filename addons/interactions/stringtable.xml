@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="KOLMIP">
+    <Package name="Interactions">
+        <Key ID="STR_KOLMIP_Interactions_DisplayName">
+            <English>Interactions</English>
+        </Key>
+    </Package>
+</Project>

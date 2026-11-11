@@ -24,7 +24,7 @@ params [
 ];
 
 private _fullName = switch (true) do {
-    case (_firstName isNotEqualTo "" && {_lastName isNotEqualTo ""}): {
+    case (_firstName isNotEqualTo "" && _lastName isNotEqualTo ""): {
         format ["%1 %2", _firstName, _lastName]
     };
     case (_firstName isNotEqualTo ""): { _firstName };

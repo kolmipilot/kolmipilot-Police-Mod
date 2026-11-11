@@ -21,7 +21,7 @@ params [
     ["_recordId", "", ["", 0]]
 ];
 
-if (!isServer || {_tableName isEqualTo ""} || {_recordId isEqualTo ""}) exitWith { createHashMap };
+if (!isServer || _tableName isEqualTo "" || _recordId isEqualTo "") exitWith { createHashMap };
 
 private _table = [_tableName] call FUNC(getTableServer);
 if (isNil "_table") exitWith { createHashMap };

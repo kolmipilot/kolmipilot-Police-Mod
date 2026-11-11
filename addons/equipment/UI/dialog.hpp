@@ -53,14 +53,14 @@ class GVAR(RadialButton): GVAR(RadialText) {
     soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush", 0.09, 1};
     soundClick[] = {"\A3\ui_f\data\sound\RscButton\soundClick", 0.09, 1};
     soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape", 0.09, 1};
-    onMouseButtonClick = QUOTE(_this call FUNC(selectRadialWeapon));
+    onMouseButtonClick = QUOTE(call FUNC(selectRadialWeapon));
 };
 
 class GVAR(radialMenu) {
     idd = IDD_RADIAL_MENU;
     movingEnable = 0;
     enableSimulation = 1;
-    onLoad = QUOTE(_this call FUNC(onRadialMenuLoad));
+    onLoad = QUOTE(call FUNC(onRadialMenuLoad));
 
     class controlsBackground {
         class SlotBackground01: GVAR(RadialText) {

@@ -62,7 +62,7 @@ if (hasInterface) then {
         },
         {
             params ["_target", "_player"];
-            (_target isKindOf "CAManBase") && {_target isNotEqualTo _player} && {[_player] call FUNC(canUsePoliceActions)}
+            (_target isKindOf "CAManBase") && _target isNotEqualTo _player && {[_player] call FUNC(canUsePoliceActions)}
         }
     ] call ace_interact_menu_fnc_createAction;
     ["CAManBase", 0, ["ACE_MainActions"], _personLicenseAction, true] call ace_interact_menu_fnc_addActionToClass;
@@ -77,7 +77,7 @@ if (hasInterface) then {
         },
         {
             params ["_target", "_player"];
-            (_target isKindOf "CAManBase") && {_target isNotEqualTo _player} && {[_player] call FUNC(canUsePoliceActions)}
+            (_target isKindOf "CAManBase") && _target isNotEqualTo _player && {[_player] call FUNC(canUsePoliceActions)}
         }
     ] call ace_interact_menu_fnc_createAction;
     ["CAManBase", 0, ["ACE_MainActions"], _personPurposeAction, true] call ace_interact_menu_fnc_addActionToClass;
@@ -164,7 +164,7 @@ if (hasInterface) then {
         if (!local _newUnit || {!isPlayer _newUnit}) exitWith {};
         private _oldHost = _oldUnit getVariable [QGVAR(takedownActionHost), objNull];
         private _oldActionId = _oldUnit getVariable [QGVAR(takedownActionId), -1];
-        if (!isNull _oldHost && {_oldActionId >= 0}) then {
+        if (!isNull _oldHost && _oldActionId >= 0) then {
             _oldHost removeAction _oldActionId;
         };
         [_newUnit, _newUnit] call FUNC(attachTakedownAction);

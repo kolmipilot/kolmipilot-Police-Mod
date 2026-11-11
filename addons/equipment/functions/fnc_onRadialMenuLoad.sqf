@@ -86,7 +86,7 @@ for "_index" from 0 to (_displayCount - 1) do {
     TRACE_4("Showing equipment slot %1 class=%2 displayName=%3 picture=%4",_index,_weaponClass,_displayName,_picture);
 };
 
-if (_currentWeaponIndex >= 0 && {_currentWeaponIndex < _displayCount}) then {
+if (_currentWeaponIndex >= 0 && _currentWeaponIndex < _displayCount) then {
     private _currentWeaponControl = _display displayCtrl (_slotIds select _currentWeaponIndex);
     ctrlSetFocus _currentWeaponControl;
 };

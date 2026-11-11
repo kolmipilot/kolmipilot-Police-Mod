@@ -20,16 +20,12 @@ class CfgPatches {
 
 #include "CfgEventHandlers.hpp"
 
-class CfgFunctions
-{
-	class ivory
-	{
-		class vehicle
-		{
-			class takedown
-			{
+class CfgFunctions {
+    class ivory {
+        class vehicle {
+            class takedown {
                 file = "\z\kolmip\addons\carcompat\functions\fnc_empty.sqf";
-			};
-		};
-	};
+            };
+        };
+    };
 };

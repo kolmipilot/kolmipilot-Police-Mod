@@ -244,7 +244,7 @@ class GVAR(RscControlsGroup) {
     h = 1;
     shadow = 0;
     style = 16;
-    class VScrollBar {
+    class VScrollbar {
         color[] = {1, 1, 1, 0.6};
         colorActive[] = {1, 1, 1, 1};
         colorDisabled[] = {1, 1, 1, 0.3};
@@ -261,7 +261,7 @@ class GVAR(RscControlsGroup) {
         autoScrollDelay = 5;
         autoScrollRewind = 0;
     };
-    class HScrollBar {
+    class HScrollbar {
         color[] = {1, 1, 1, 0.6};
         colorActive[] = {1, 1, 1, 1};
         colorDisabled[] = {1, 1, 1, 0.3};

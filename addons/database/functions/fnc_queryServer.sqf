@@ -23,7 +23,7 @@ params [
     ["_maxResults", 50, [0]]
 ];
 
-if (!isServer || {_tableName isEqualTo ""}) exitWith { [] };
+if (!isServer || _tableName isEqualTo "") exitWith { [] };
 
 private _table = [_tableName] call FUNC(getTableServer);
 if (isNil "_table") exitWith { [] };
@@ -67,7 +67,7 @@ if (count _criteria == 0) then {
                 private _critKey = _x;
                 private _critVal = _y;
 
-                if (_critKey isNotEqualTo "search" && {_critKey isNotEqualTo "name"}) then {
+                if (_critKey isNotEqualTo "search" && _critKey isNotEqualTo "name") then {
                     private _recVal = _rec getOrDefault [_critKey, nil];
                     if (isNil "_recVal") then {
                         _match = false;

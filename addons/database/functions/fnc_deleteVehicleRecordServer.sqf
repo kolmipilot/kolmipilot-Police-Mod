@@ -13,7 +13,7 @@
  */
 
 params [["_vehicleId", "", ["", 0]]];
-if (!isServer || {_vehicleId isEqualTo ""}) exitWith { false };
+if (!isServer || _vehicleId isEqualTo "") exitWith { false };
 
 private _table = ["vehicles"] call FUNC(getTableServer);
 if (isNil "_table") exitWith { false };

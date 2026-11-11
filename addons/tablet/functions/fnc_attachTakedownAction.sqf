@@ -21,7 +21,7 @@ if (isNull _unit || {isNull _actionHost}) exitWith {};
 
 private _oldHost = _unit getVariable [QGVAR(takedownActionHost), objNull];
 private _oldActionId = _unit getVariable [QGVAR(takedownActionId), -1];
-if (!isNull _oldHost && {_oldActionId >= 0}) then {
+if (!isNull _oldHost && _oldActionId >= 0) then {
     _oldHost removeAction _oldActionId;
 };
 

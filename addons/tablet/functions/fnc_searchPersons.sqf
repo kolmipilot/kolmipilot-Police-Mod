@@ -36,7 +36,7 @@ if (_queryText isNotEqualTo "") then {
     _criteria set ["search", _queryText];
 };
 
-if (GVAR(filterWantedOnly) || {GVAR(currentTab) == 1}) then {
+if (GVAR(filterWantedOnly) || GVAR(currentTab) == 1) then {
     _criteria set ["isWanted", true];
 };
 

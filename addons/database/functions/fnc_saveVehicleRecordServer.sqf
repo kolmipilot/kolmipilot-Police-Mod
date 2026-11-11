@@ -25,9 +25,9 @@ if (isNil "_table") exitWith { [false, ""] };
 private _records = _table get "records";
 private _vehicleId = _record getOrDefault ["vehicleId", ""];
 private _netId = _record getOrDefault ["netId", ""];
-if !(_vehicleId isEqualType "" && {_netId isEqualType ""}) exitWith { [false, ""] };
+if !(_vehicleId isEqualType "" && _netId isEqualType "") exitWith { [false, ""] };
 
-if (_vehicleId isEqualTo "" && {_netId isNotEqualTo ""}) then {
+if (_vehicleId isEqualTo "" && _netId isNotEqualTo "") then {
     {
         if ((_y getOrDefault ["netId", ""]) isEqualTo _netId) exitWith {
             _vehicleId = _x;
@@ -66,7 +66,7 @@ if (_plate isEqualTo "") then {
 private _plateChars = toArray _plate;
 private _validPlate = count _plateChars >= 3 && {count _plateChars <= 10};
 {
-    if !(_x == 45 || {_x >= 48 && {_x <= 57}} || {_x >= 65 && {_x <= 90}}) exitWith {
+    if !(_x == 45 || {_x >= 48 && _x <= 57} || {_x >= 65 && _x <= 90}) exitWith {
         _validPlate = false;
     };
 } forEach _plateChars;
@@ -113,8 +113,8 @@ private _displayName = _record getOrDefault ["displayName", ""];
 private _isWanted = _record getOrDefault ["isWanted", false];
 private _wantedReason = _record getOrDefault ["wantedReason", ""];
 private _notes = _record getOrDefault ["notes", ""];
-if !(_className isEqualType "" && {_displayName isEqualType ""} && {_isWanted isEqualType false}
-    && {_wantedReason isEqualType ""} && {_notes isEqualType ""}) exitWith { [false, ""] };
+if !(_className isEqualType "" && _displayName isEqualType "" && _isWanted isEqualType false
+    && _wantedReason isEqualType "" && _notes isEqualType "") exitWith { [false, ""] };
 _record set ["className", _className];
 _record set ["displayName", _displayName];
 _record set ["isRegistered", true];
@@ -125,7 +125,7 @@ _record set ["netId", _netId];
 
 private _oldOwnerId = _previousRecord getOrDefault ["ownerId", ""];
 private _oldPlate = _previousRecord getOrDefault ["plate", ""];
-if (_oldOwnerId isNotEqualTo "" && {_oldOwnerId isNotEqualTo _ownerId || {_oldPlate isNotEqualTo _plate}}) then {
+if (_oldOwnerId isNotEqualTo "" && {_oldOwnerId isNotEqualTo _ownerId || _oldPlate isNotEqualTo _plate}) then {
     private _oldOwner = ["persons", _oldOwnerId] call FUNC(getRecordServer);
     if (count _oldOwner > 0) then {
         private _oldVehicles = _oldOwner getOrDefault ["vehicles", []];

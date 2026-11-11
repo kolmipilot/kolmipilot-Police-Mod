@@ -27,7 +27,7 @@ params [
     ["_recordId", "", ["", 0]]
 ];
 
-if (!isServer || {_requestId isEqualTo ""} || {_tableName isEqualTo ""}) exitWith {};
+if (!isServer || _requestId isEqualTo "" || _tableName isEqualTo "") exitWith {};
 
 // Enforce server-authoritative police authorization
 if (GVAR(requirePoliceAuth) && {
