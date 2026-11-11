@@ -147,9 +147,9 @@ _unitWithSword addEventHandler ["HandleDamage", {
     private _addedDamage = _damage - _currentDamage;
     private _newDamage = _currentDamage + (_addedDamage * 0.3);
 
-    if (!isNull _hitter && {_objHit isNotEqualTo _hitter}) then {
+    if (!isNull _hitter && _objHit isNotEqualTo _hitter) then {
 
-        if (_damage >= 1 && {_selection == ""}) then {
+        if (_damage >= 1 && _selection == "") then {
             _objHit removeAllEventHandlers "HandleDamage";
 
             private _rndAnim = selectRandom [
