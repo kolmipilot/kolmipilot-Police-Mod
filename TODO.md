@@ -152,6 +152,7 @@ Implemented only the requested innocent/wanted registration choice. Civilian beh
 ### Phase 1 - Move already existing base functions, and create new base fucntion into interactions addon.
 
 - [ ] Wbk mele remoteExec and spawn to scheduler, if possible, mayaby some fucntions needs to be called scheduled
+- [ ] Wbk mele knife attack script
 - [ ] Move alredy ready basic interaction system from phase 6. Checking plates by ace interaction menu should stay in tablet.
 - [ ] Create function handling getting out.
 - [ ] Create function handling attacking cops

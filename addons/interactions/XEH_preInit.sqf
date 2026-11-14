@@ -6,18 +6,6 @@ PREP_RECOMPILE_START;
 #include "XEH_PREP.hpp"
 PREP_RECOMPILE_END;
 
-[QGVAR(switchMove), {
-    params ["_unit", "_move"];
-    if (isNull _unit) exitWith {};
-    _unit switchMove _move;
-}] call CBA_fnc_addEventHandler;
-
-[QGVAR(removeHitPartHandlers), {
-    params ["_unit"];
-    if (isNull _unit) exitWith {};
-    _unit removeAllEventHandlers "HitPart";
-}] call CBA_fnc_addEventHandler;
-
 [QGVAR(playDeathSound), {
     params ["_unit", "_soundName", "_soundRadius", "_secondsToDelete"];
     if (!hasInterface || {isNull _unit}) exitWith {};
@@ -35,5 +23,14 @@ PREP_RECOMPILE_END;
         _secondsToDelete
     ] call CBA_fnc_waitAndExecute;
 }] call CBA_fnc_addEventHandler;
+
+[
+    QGVAR(hideWeaponOnDismount),
+    "CHECKBOX",
+    [LLSTRING(Setting_HideWeaponOnDismount), LLSTRING(Setting_HideWeaponOnDismount_Tooltip)],
+    [QUOTE(MOD_NAME), QUOTE(COMPONENT_BEAUTIFIED)],
+    true,
+    0
+] call CBA_fnc_addSetting;
 
 ADDON = true;

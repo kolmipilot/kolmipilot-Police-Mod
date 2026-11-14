@@ -53,3 +53,9 @@ extends = "default"
 workshop = [
     "2629127571", # expansion mod police
 ]
+
+[kat]
+extends = "default"
+workshop = [
+    "2020940806", # expansion mod police
+]

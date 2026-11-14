@@ -2,6 +2,38 @@
 #include "\a3\ui_f\hpp\defineDIKCodes.inc"
 
 if (isServer) then {
+    if (GVAR(hideWeaponOnDismount)) then {
+        ["vehicle", {
+        params ["_unit", "_newVehicle", "_oldVehicle"];
+        if (!isNull _newVehicle) exitWith {};
+
+        [
+            {
+                params ["_unit"];
+                isNull objectParent _unit && { (animationState _unit) find "getout" == -1 }
+            },
+            {
+                params ["_unit"];
+                [
+                    {
+                        params ["_unit"];
+                        if (currentWeapon _unit != "") then {
+                            if (!isNil "ace_weaponselect_fnc_putWeaponAway") then {
+                                [_unit] call ace_weaponselect_fnc_putWeaponAway;
+                            } else {
+                                _unit action ["SwitchWeapon", _unit, _unit, 299];
+                            };
+                        };
+                    },
+                    [_unit],
+                    0.2
+                ] call CBA_fnc_waitAndExecute;
+            },
+            [_unit],
+            5
+        ] call CBA_fnc_waitUntilAndExecute;
+        }] call CBA_fnc_addPlayerEventHandler;
+    };
 
 };
 

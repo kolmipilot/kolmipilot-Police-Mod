@@ -4,5 +4,11 @@
         <Key ID="STR_KOLMIP_Interactions_DisplayName">
             <English>Interactions</English>
         </Key>
+        <Key ID="STR_KOLMIP_Interactions_Setting_HideWeaponOnDismount">
+            <English>Hide Weapon on Dismount</English>
+        </Key>
+        <Key ID="STR_KOLMIP_Interactions_Setting_HideWeaponOnDismount_Tooltip">
+            <English>When enabled, the weapon will be hidden when dismounting a vehicle.</English>
+        </Key>
     </Package>
 </Project>
